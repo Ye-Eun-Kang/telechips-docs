@@ -1,41 +1,33 @@
-# Website
+# telechips-docs
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
-```
-$ yarn
-```
-
+```bash
+# 패키지 설치 (필수)
+yarn
 ### Local Development
 
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+# 로컬 개발 서버 실행
+# 브라우저가 자동으로 열리고, 변경 사항이 실시간으로 반영됩니다
+yarn start
 
 ### Build
 
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+# 정적 파일을 build 디렉토리에 생성
+# 정적 컨텐츠 호스팅 서비스에서 사용 가능
+yarn build
 
 ### Deployment
 
-Using SSH:
+# SSH를 사용하는 경우
+USE_SSH=true yarn deploy
 
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
+# SSH를 사용하지 않는 경우
+# GIT_USER를 본인의 GitHub 사용자명으로 변경하세요
+GIT_USER=<Your GitHub username> yarn deploy
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+
