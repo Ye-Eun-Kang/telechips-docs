@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktelechips_docs=self.webpackChunktelechips_docs||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/telechips-docs/blog","blogTitle":"Blog","authorsListPath":"/telechips-docs/blog/authors"}')}}]);
