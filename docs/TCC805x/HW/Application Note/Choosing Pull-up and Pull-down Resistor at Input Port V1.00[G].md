@@ -1,1 +1,1 @@
-[문서 제목](https://ye-eun-kang.github.io/telechips-docs/docs/TCC805x/HW/Application Note/TCC805x Hardware-Application Note for Choosing Pull-up&down Resistor at Input Port V1.00[G].pdf)
+[문서 제목](https://ye-eun-kang.github.io/telechips-docs/docs/TCC805x/HW/Application%20Note/TCC805x%20Hardware-Application%20Note%20for%20Choosing%20Pull-up&down%20Resistor%20at%20Input%20Port%20V1.00%5BG%5D.pdf)
