@@ -13,7 +13,7 @@ Figure 1.1 shows a graph of the typical PDN specification and the board’s impe
 | CPUMC_0P95_1CPU Power 1     | VDD095D_CPUMC_76_CORE0-1            |
 | CPUMC_0P95_2CPU Power 2     | VDD095D_CPUMC_76_CORE2-3            |
 | CPUMC_0P95_3CPU Power 3     | VDD095D_CPUMC_55_CORE0-3            |
-| CPUSC_0P95CPU Power 4       | VDD095D_CPUMC_WRAP <br/> VDD095D_CPUSC_55_CORE0-1 <br> VDD095D_CPUSC_WRAP |
+| CPUSC_0P95CPU Power 4       | VDD095D_CPUMC_WRAP <br/> VDD095D_CPUSC_55_CORE0-1 <br/> VDD095D_CPUSC_WRAP |
 | NPU_0P85NPU Power           | VDD085D_NPU                        |
 | IP_0P85DDR Controller Power | VDD085D_DDR0-1                     |
 | GB_0P75Video Power 1        | VDD075D_GPU                        |
