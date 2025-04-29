@@ -1,0 +1,12 @@
+/* 모든 테이블을 창 폭 100%로 고정 */
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* 테이블 안 셀 스타일 (가독성 향상) */
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
