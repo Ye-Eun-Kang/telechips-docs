@@ -1,4 +1,3 @@
-
 # Introduction
 
 This document provides the DC and AC specifications of the Power Delivery Network (PDN) for the target board.
