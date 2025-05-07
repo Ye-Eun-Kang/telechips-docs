@@ -38,7 +38,7 @@ const config = {
           editUrl: 'https://github.com/Ye-Eun-Kang/telechips-docs/edit/main/',
         },
         theme: {
-          customCss: require.resolve('./assets/css/style.css'),
+          
         }
       }),
     ],
