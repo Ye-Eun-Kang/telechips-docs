@@ -5,15 +5,11 @@ sidebar_label: Getting Started
 ---
 
 <div align="right">
-  <a
-    class="pdf-download-button"
-    href="https://telechips-r2-cdn.ye-eun-kang.workers.dev/Android%2013%20SDK-Getting%20Started%20for%20TCC807x%20V0.40%5BA%5D.pdf"
-    download
-  >
-    Download PDF
-  </a>
+<a href="https://telechips-r2-cdn.ye.kang.workers.dev/Android13_SDK_GettingStarted_TCC807x_V0.40A.pdf"
+   class="pdf-download-button" download="Android13_SDK_GettingStarted_TCC807x_V0.40A.pdf">
+  Download PDF
+</a>
 </div>
-
 
 # Getting Started
 
