@@ -11,7 +11,6 @@ sidebar_label: Getting Started
 </a>
 </div>
 
-
 # Getting Started
 
 이 문서는 TCC805x 프로젝트 시작 방법을 안내합니다.
