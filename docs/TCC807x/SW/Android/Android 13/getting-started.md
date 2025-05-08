@@ -4,17 +4,15 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-<div style="display: flex; justify-content: flex-end; margin-top: 0.5rem; margin-bottom: 1rem;">
+<div align="right">
   <a
+    class="pdf-download-button"
     href="https://telechips-r2-cdn.ye-eun-kang.workers.dev/Android%2013%20SDK-Getting%20Started%20for%20TCC807x%20V0.40%5BA%5D.pdf"
     download
-    style="display: inline-block; background-color: #e6f2ff; color: #003366; border: 1px solid #cce6ff; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; padding: 4px 8px; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"
   >
-   Download PDF
+    Download PDF
   </a>
 </div>
-
-
 
 
 # Getting Started
