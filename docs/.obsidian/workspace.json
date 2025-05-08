@@ -15,7 +15,7 @@
               "state": {
                 "file": "TCC803x/HW/Application Note/Test.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Test"
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -170,12 +171,11 @@
   },
   "active": "7663845a4efcc82a",
   "lastOpenFiles": [
-    "TCC803x/HW/Application Note/문서 2.md",
     "TCC803x/HW/Application Note/Test.md",
+    "TCC803x/HW/Application Note/문서 2.md",
     "TCC803x/HW/Application Note/Test_2.txt",
     "TCC803x/HW/Application Note/새 텍스트 문서.txt",
     "TCC803x/HW/Application Note/문서 1.md",
-    "TCC803x/HW/Application Note/Test.md",
     "TCC803x/HW/Application Note",
     "TCC803x/HW/Application_Note/문서 2.md",
     "TCC803x/HW/Application_Note/문서 1.md",
