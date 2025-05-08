@@ -1,3 +1,9 @@
+---
+id: getting-started
+title: Getting Started
+sidebar_label: Getting Started
+---
+
 <div style={{
   display: 'flex',
   justifyContent: 'flex-end',
@@ -22,15 +28,6 @@
     Download PDF
   </a>
 </div>
-
-
----
-id: getting-started
-title: Getting Started
-sidebar_label: Getting Started
----
-
-
 
 
 
