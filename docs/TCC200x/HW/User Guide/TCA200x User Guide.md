@@ -47,11 +47,7 @@ This chapter lists and defines terminologies used in this user guide.
 
 Figure 2.1 shows the system block diagram of the TCA2000 EVB.
 
- **![image-20250509155708714](https://github.com/Ye-Eun-Kang/telechips-docs/tree/main/docs/TCC200x/HW/User%20Guide/Images/Figure 2.1.png)
 
-
-
- 
 
 ## 2.2   Features of TCA2000 EVB
 
