@@ -1,9 +1,9 @@
+
 > id: linux-yp40-sdk-getting-started
 >
 > title:Linux YP4.0 IVI SDK-Getting Started for TCC803x
 >
 > typora-root-url: ./static/img/
-
 
 
 # Introduction
@@ -23,6 +23,7 @@ This document describes Linux_YP4.0_IVI usage as follows:
 # Board Description
 
 ## EVB Version
+
 
 Table 2.1 EVB Version
 
@@ -45,14 +46,43 @@ Table 2.1 EVB Version
 To use a different LCD, modify the build configuration as described in Chapter 4.6.3.4.3.
 
 
+=======
++------------------------------+---------------------------------------+
+| **Board**                    | **Board Name/Version**                |
++:============================:+=======================================+
+| CPU Sub-board                | TCC8030_CPU_LPD4321_V1.2.2            |
++------------------------------+---------------------------------------+
+| Main Board                   | TCC803X_MAIN_V1.1.1                   |
++------------------------------+---------------------------------------+
+| 12.3" 1920x720 LCD           | TM_WLCD_12.3LVDS_SV0.2                |
+|                              |                                       |
+|                              | TCC80XX_BOE_WLCD_12.3_SV1.1.1         |
+|                              |                                       |
+|                              | TCCXXXX_AUO_WLCD_12.3_SV0.1.0         |
++------------------------------+---------------------------------------+
+| Audio and Broadcasting and   | TCC8XXX_AK4601_SILAB_ISDBT_DAB_SV1.0  |
+| Radio tuner Board (ABRB)     |                                       |
++------------------------------+---------------------------------------+
+| Jog Navigation Sub-board     | TCC80XX_KEY_SV0.1                     |
++------------------------------+---------------------------------------+
+
+: []{#_Ref167786678 .anchor}Table 2.1 EVB Version
+
+**Note:** For more details, refer to the following document. \[8\]
+
+- "*TCC803x Common Hardware-Assembly Manual for EVB*"
+
+  **Important**: The default LCD setting of Linux_YP4.0_IVI SDK is
+  fitted with "TCCXXXX_AUO_WLCD_12.3".
+
+  To use a different LCD, modify the build configuration as described in
+  Chapter 4.6.3.4.3.
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 
 ### CPU Sub-board
 
 Figure 2.1 shows the top view of TCC803x CPU sub-board.
-
 ![image-20250512112558246](../../../../../../YE/15. web-base documentation/Github/telechips-docs/static/img/Linux YP4.0 IVI SDK-Getting Started for TCC803x/image-20250512112558246.png)
-
-![](media/image2.png){width="6.802083333333333in" height="4.6875in"}
 
 []{#_Ref157148846 .anchor}Figure 2.1 CPU Sub-board (Top View)
 
@@ -512,9 +542,13 @@ Sub-board
 
 ### ABRB
 
+<<<<<<< HEAD
 [Figure]: 
 
 shows the top view of ABRB. The ABRB is connected to the
+=======
+Figure 2.10 shows the top view of ABRB. The ABRB is connected to the
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 main board.
 
 <figure>
@@ -523,6 +557,10 @@ main board.
 2.10 ABRB (Top View)</p></figcaption>
 </figure>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 Table 2.10 describes ABRB (top view) connectors.
 
 +----+--------+------------------+-----------------------------------+
@@ -843,8 +881,16 @@ switches (SW3, SW4, and SW5) as shown in the following Table 3.2 and
 Figure 3.1.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<<<<<<< HEAD
    **Display**                         **SW1**                                               **SW2**                                               **SW6**                                **SW4**                  **SW3**                  **SW5**
 ------------- ----------------------------------------------------- ----------------------------------------------------- ----------------------------------------------------- ------------------------ ------------------------ ------------------------
+=======
+
+   **Display**                         **SW1**                                               **SW2**                                               **SW6**                                **SW4**                  **SW3**                  **SW5**
+
+------------- ----------------------------------------------------- ----------------------------------------------------- ----------------------------------------------------- ------------------------ ------------------------ ------------------------
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
     Dual LVDS    ![](media/image40.png){width="0.6654286964129483in"   ![](media/image41.png){width="0.6737773403324584in"   ![](media/image41.png){width="0.6737773403324584in"   ![](media/image42.emf)   ![](media/image42.emf)   ![](media/image43.emf)
                            height="0.3779527559055118in"}                        height="0.3834503499562555in"}                        height="0.3834503499562555in"}                                                               
 
@@ -860,6 +906,10 @@ height="1.4326388888888888in"}
 Switch for Dual LVDS in Single Display System
 
 **\
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 **
 
 **Step 2:** Check the LED indicator on the WLCD_12.3" LCD sub-board for
@@ -1122,6 +1172,7 @@ Once the download is completed, you can check the following items.
 | u |          |          |                                           |
 | r |          |          |                                           |
 | c |          |          |                                           |
+<<<<<<< HEAD
 | e |          |          |                                           |
 | - |          |          |                                           |
 | m |          |          |                                           |
@@ -1178,6 +1229,65 @@ Once the download is completed, you can check the following items.
 |   |          |          | - x86_64-buildt                           |
 |   |          |          | ools-extended-nativesdk-standalone-4.0.sh |
 +---+----------+----------+-------------------------------------------+
+=======
+
+| e                                                            |      |      |                                           |
+| ------------------------------------------------------------ | ---- | ---- | ----------------------------------------- |
+| m                                                            |      |      |                                           |
+| i                                                            |      |      |                                           |
+| r                                                            |      |      |                                           |
+| r                                                            |      |      |                                           |
+| o                                                            |      |      |                                           |
+| r                                                            |      |      |                                           |
+| +---+----------+----------+-------------------------------------------+ |      |      |                                           |
+| f                                                            |      |      | > FWDN execute file                       |
+| w                                                            |      |      | >                                         |
+| d                                                            |      |      | > VTC driver                              |
+| n                                                            |      |      | >                                         |
+| _                                                            |      |      | > Source code                             |
+| v                                                            |      |      |                                           |
+| 8                                                            |      |      |                                           |
+| +---+----------+----------+-------------------------------------------+ |      |      |                                           |
+| m                                                            |      |      | > mktcimg execute file                    |
+| k                                                            |      |      | >                                         |
+| t                                                            |      |      | > Source code                             |
+| c                                                            |      |      |                                           |
+| i                                                            |      |      |                                           |
+| m                                                            |      |      |                                           |
+| g                                                            |      |      |                                           |
+| +---+----------+----------+-------------------------------------------+ |      |      |                                           |
+| b                                                            |      |      | > Boot-firmware files                     |
+| o                                                            |      |      | >                                         |
+| o                                                            |      |      | > Tools to make images for boot-firmware  |
+| t                                                            |      |      |                                           |
+| -                                                            |      |      |                                           |
+| f                                                            |      |      |                                           |
+| i                                                            |      |      |                                           |
+| r                                                            |      |      |                                           |
+| m                                                            |      |      |                                           |
+| w                                                            |      |      |                                           |
+| a                                                            |      |      |                                           |
+| r                                                            |      |      |                                           |
+| e                                                            |      |      |                                           |
+| _                                                            |      |      |                                           |
+| t                                                            |      |      |                                           |
+| c                                                            |      |      |                                           |
+| c                                                            |      |      |                                           |
+| 8                                                            |      |      |                                           |
+| 0                                                            |      |      |                                           |
+| 3                                                            |      |      |                                           |
+| x                                                            |      |      |                                           |
+| +---+----------+----------+-------------------------------------------+ |      |      |                                           |
+| T                                                            |      |      | > Yocto Project 4.0 Kirkstone             |
+| o                                                            |      |      | > *buildtools*                            |
+| o                                                            |      |      |                                           |
+| l                                                            |      |      | - x86_                                    |
+| s                                                            |      |      | 64-buildtools-nativesdk-standalone-4.0.sh |
+|                                                              |      |      |                                           |
+|                                                              |      |      | - x86_64-buildt                           |
+|                                                              |      |      | ools-extended-nativesdk-standalone-4.0.sh |
+| +---+----------+----------+-------------------------------------------+ |      |      |                                           |
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 
 ### Autolinux
 
@@ -1667,6 +1777,10 @@ only when there are at least two images to be built. The way the
 **build** command works is the same as ***bitbake***.
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   **\~/release/build-autolinux\$ ./autolinux -c build\
   **Read configuration from autolinux.config\
   **\
@@ -1675,7 +1789,12 @@ only when there are at least two images to be built. The way the
   2.telechips-ivi-image-multimedia\
   3.telechips-ivi-image\
   4.automotive-linux-platform-image\
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   Choose Image (1-4):4
+  
   -----------------------------------------------------------------------
 
 -----------------------------------------------------------------------
@@ -1772,8 +1891,15 @@ argument).
 > machine stored in "autolinux.config".
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
   **\~/release/build-autolinux\$ ./autolinux -c build \"linux-telechips
+=======
+
+  **\~/release/build-autolinux\$ ./autolinux -c build \"linux-telechips
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   -c compile\"**
+  
   -----------------------------------------------------------------------
 
 -----------------------------------------------------------------------
@@ -1785,8 +1911,15 @@ argument).
 > **with-subcore** feature enabled.
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
   **\~/release/build-autolinux\$ ./autolinux -c build sub
+=======
+
+  **\~/release/build-autolinux\$ ./autolinux -c build sub
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \"linux-telechips -c compile\"**
+  
   -----------------------------------------------------------------------
 
 -----------------------------------------------------------------------
@@ -2147,8 +2280,16 @@ To use the sub-core, you should enable the **INVITE_PLATFORM** variable
 in the main core's "local.conf".
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
        **Feature**      **Configuration**
 --------------------- -------------------------------------------------
+=======
+
+       **Feature**      **Configuration**
+
+--------------------- -------------------------------------------------
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
      Enable sub-core    INVITE_PLATFORM += \"with-subcore\"
 
 -----------------------------------------------------------------------
@@ -2161,9 +2302,17 @@ in the main core's "local.conf".
 > The RVC is enabled by default.
 
 --------------------- -------------------------------------------------
+<<<<<<< HEAD
        **Feature**                      **Configuration**
     
            RVC                       SUBCORE_APPS += \"rvc\"
+=======
+
+       **Feature**                      **Configuration**
+    
+           RVC                       SUBCORE_APPS += \"rvc\"
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 --------------------- -------------------------------------------------
 
 #### Additional Setting
@@ -2176,11 +2325,19 @@ Use **DISTRO_FEATURES:remove = \"wayland\"** variable in the main core's
 The default value is Wayland.
 
 --------------------- -------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
    **Graphics System**                  **Configuration**
 
          Wayland                             Default
     
           FBDEV               DISTRO_FEATURES:remove = \"wayland\"
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 --------------------- -------------------------------------------------
 
 ##### Enable PulseAudio
@@ -2192,9 +2349,17 @@ enabled.
 **Note:** **\" pulseaudio\"** is enabled by default.
 
 --------------------- -------------------------------------------------
+<<<<<<< HEAD
     **Sound Server**                    **Configuration**
     
        PulseAudio           DISTRO_FEATURES:append = \" pulseaudio\"
+=======
+
+    **Sound Server**                    **Configuration**
+    
+       PulseAudio           DISTRO_FEATURES:append = \" pulseaudio\"
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 --------------------- -------------------------------------------------
 
 ##### Setting by changing LCD Panel AUO to BOE
@@ -2204,11 +2369,19 @@ the **\#** (uncomment) from the **#LCD_PANEL_TYPE** in the "local.conf"
 in each core.
 
 --------------------- -------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
         **Core**                         **local.conf**
-    
+
         Main Core                   #LCD_PANEL_TYPE = \"BOE\"
     
         Sub-core                    #LCD_PANEL_TYPE = \"BOE\"
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 --------------------- -------------------------------------------------
 
 **Note:** For more details, refer to "*TCCxxxx Common SDK-User Guide for
@@ -2421,7 +2594,12 @@ currently building, you can set up the **CORE_IMAGE_EXTRA_INSTALL**
 variable in "conf/local.conf" as follows:
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   CORE_IMAGE_EXTRA_INSTALL += \"openssh\"
+  
   -----------------------------------------------------------------------
 
 -----------------------------------------------------------------------
@@ -2647,6 +2825,10 @@ done, you can skip this chapter and go to Chapter 4.8.1.2.
 Linux_YP4.0_IVI supports four types of ADTs as follows:
 
 - **meta-toolchain-telechips (ADT)\
+  <<<<<<< HEAD
+  =======
+  
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   **You can install basic packages for building Linux_YP4.0_IVI-based
   programs by using **meta-toolchain-telechips**.\
   \
@@ -3558,6 +3740,10 @@ local.conf.
 +-----------------------------------------------------------------------+
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \~/release/build-autolinux\$ ./autolinux -c build
 
 -----------------------------------------------------------------------
@@ -3570,6 +3756,10 @@ share it amongst multiple recipe (.bb) files. To use a class file, the
 recipe should inherit the class.
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \~/release/build-autolinux\$ ./autolinux -c make_fai
 
 -----------------------------------------------------------------------
@@ -3748,6 +3938,10 @@ re-make SD Data.
 The following example shows how to add a partition.
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \~/release/build-autolinux\$ vi
   poky/meta-telechips/meta-core/classes/make_fai_customer.bbclass
 
@@ -3764,6 +3958,10 @@ The following example shows how to add a partition.
 +-----------------------------------------------------------------------+
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \~/release/build-autolinux\$ vi
   poky/meta-telechips/meta-core/classes/tcc-base-image.bbclass
 
@@ -3789,6 +3987,10 @@ The following example shows how to add a partition.
 This example renames an existing partition to **rom_a** and **rom_b**.
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \~/release/build-autolinux\$ vi
   poky/meta-telechips/meta-core/classes/make_fai_customer.bbclass
 
@@ -3811,6 +4013,10 @@ This example renames an existing partition to **rom_a** and **rom_b**.
 +-----------------------------------------------------------------------+
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \~/release/build-autolinux\$ vi
   poky/meta-telechips/meta-core/classes/tcc-base-image.bbclass
 
@@ -3884,6 +4090,10 @@ The \"tcc803x.cfg\" is a list of parameters input to the
 +-----------------------------------------------------------------------+
 
 **\
+<<<<<<< HEAD
+=======
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 **
 
 ## Install VTC Driver
@@ -3938,8 +4148,16 @@ The downloading sequence of ***FWDN*** is as follows:
 Refer to Chapter 2.2.1 and Figure 5.2.
 
 -------------------------------------------------------------------------------------------------------
+<<<<<<< HEAD
      **USB Boot Mode**                      **eMMC Boot Mode**                      **SNOR Boot Mode**
 ------------------------ ----------------------------------------------------- ------------------------
+=======
+
+     **USB Boot Mode**                      **eMMC Boot Mode**                      **SNOR Boot Mode**
+
+------------------------ ----------------------------------------------------- ------------------------
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
    ![](media/image16.png)   ![](media/image20.png){width="0.9565212160979878in"   ![](media/image18.png)
                                       height="1.5098807961504812in"}             
 
@@ -3994,8 +4212,15 @@ Refer to Chapter 2.2.1 and Figure 5.2.
 ### Connect FWDN V8 to Board
 
 --------------------------------------------------------------------------------
+<<<<<<< HEAD
   fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) \--fwdn
+=======
+
+  fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) \--fwdn
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \...\\boot-firmware\\fwdn.json
+  
   --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -4003,8 +4228,15 @@ Refer to Chapter 2.2.1 and Figure 5.2.
 ### Execute \--low-format Command by Using FWDN V8 (Optional)
 
 -----------------------------------------------------------------------------------
+<<<<<<< HEAD
   fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) \--storage
+=======
+
+  fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) \--storage
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   emmc \--low-format
+  
   -----------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------
@@ -4015,8 +4247,15 @@ skip this chapter.
 ### Download Pre-built F/W Image
 
 ---------------------------------------------------------------------------
+<<<<<<< HEAD
   fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) -w
+=======
+
+  fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) -w
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \...\\boot-firmware\\boot.json
+  
   ---------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------
@@ -4024,8 +4263,15 @@ skip this chapter.
 ### Download Images to SNOR for CR5 (MICOM)
 
 -----------------------------------------------------------------------
+<<<<<<< HEAD
   fwdn\> fwdn.exe \--write \...\\prebuilt\\tcc803x_snor_boot.rom \--area
+=======
+
+  fwdn\> fwdn.exe \--write \...\\prebuilt\\tcc803x_snor_boot.rom \--area
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   die1 \--storage snor
+  
   -----------------------------------------------------------------------
 
 -----------------------------------------------------------------------
@@ -4033,8 +4279,15 @@ skip this chapter.
 ### Download ".FAI" File
 
 ---------------------------------------------------------------------------
+<<<<<<< HEAD
   fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) -w
+=======
+
+  fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) -w
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \...\\SD_Data.fai \--storage emmc \--area user
+  
   ---------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------
@@ -4047,8 +4300,15 @@ below: Download "boot.img" to eMMC's boot partition.
 Depending on the storage, you should use different option as follows:
 
 ---------------------------------------------------------------------------
+<<<<<<< HEAD
   fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) -w
+=======
+
+  fwdn\> [fwdn.exe](https://wiki.telechips.com:8443/display/A2/fwdn.exe) -w
+
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
   \...\\boot.img \--storage emmc \--area user \--part boot_a
+  
   ---------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------
@@ -4129,12 +4389,21 @@ height="5.388888888888889in"}
 
 9.  TCCxxxx Common-User Guide for Firmware Downloader V8
 
+<<<<<<< HEAD
 10. TC Common-User Guide for mktcimg
 
 11. TCC803x Common Hardware-User Guide for EVB\
     TCC803x Common Hardware-Quick Start Guide for EVB
 
 12. TCCxxxx Common SDK-User Guide for AUO and BOE touch IC
+=======
+10.  TC Common-User Guide for mktcimg
+
+11.  TCC803x Common Hardware-User Guide for EVB\
+     TCC803x Common Hardware-Quick Start Guide for EVB
+
+12.  TCCxxxx Common SDK-User Guide for AUO and BOE touch IC
+>>>>>>> e677cfe877719359b3d25fe6995e71bda3a2127b
 
 **Note**: Reference documents can be provided whenever available,
 depending on the terms of a contract. If the reference documents are

@@ -47,11 +47,7 @@ This chapter lists and defines terminologies used in this user guide.
 
 Figure 2.1 shows the system block diagram of the TCA2000 EVB.
 
-​                             
 
-
-
- 
 
 ## 2.2   Features of TCA2000 EVB
 
@@ -162,6 +158,7 @@ Figure 3.1 and Figure 3.2 show the top view and bottom view of the TCA2000 modul
 
 
 
+ ![image-20250509160927899](C:\Users\jekim\AppData\Roaming\Typora\typora-user-images\image-20250509160927899.png)
 
 **Figure 3.2 TCA2000 Module Board (Bottom View)**
 
