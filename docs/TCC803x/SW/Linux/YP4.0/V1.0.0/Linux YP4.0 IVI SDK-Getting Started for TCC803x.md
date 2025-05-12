@@ -51,7 +51,8 @@ To use a different LCD, modify the build configuration as described in Chapter 4
 
 Figure 2.1 shows the top view of TCC803x CPU sub-board.
 
- ![image-20250512131948119](../../../../../../static/img/Linux YP4.0 IVI SDK-Getting Started for TCC803x/image-20250512131948119.png)
+![Figure 2.1 CPU Sub-board](/803x/linux-yp4.0-getting-started/figure-2.1-cpu-sub-board.png)
+
 
 ​                               
 

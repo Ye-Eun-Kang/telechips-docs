@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TCC803x/HW/Application Note/Test.md",
+                "file": "TCC803x/SW/Linux/YP4.0/V1.0.0/Linux YP4.0 IVI SDK-Getting Started for TCC803x.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Test"
+              "title": "Linux YP4.0 IVI SDK-Getting Started for TCC803x"
             }
           }
         ]
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -171,6 +170,12 @@
   },
   "active": "7663845a4efcc82a",
   "lastOpenFiles": [
+    "TCC803x/SW/Linux/YP4.0/V1.0.0/Linux YP4.0 IVI SDK-Getting Started for TCC803x_img/Figure 2.1 CPU Sub-board.png",
+    "TCC803x/SW/Linux/YP4.0/V1.0.0/Linux YP4.0 IVI SDK-Getting Started for TCC803x_img/Pasted image 20250512132601.png",
+    "TCC803x/SW/Linux/YP4.0/V1.0.0/Linux YP4.0 IVI SDK-Getting Started for TCC803x_img",
+    "TCC803x/SW/Linux/YP4.0/V1.0.0/새 폴더/Pasted image 20250512132601.png",
+    "TCC803x/SW/Linux/YP4.0/V1.0.0/새 폴더",
+    "Pasted image 20250512132601.png",
     "TCC803x/HW/Application Note/Test.md",
     "TCC803x/HW/Application Note/문서 2.md",
     "TCC803x/HW/Application Note/Test_2.txt",
