@@ -47,8 +47,6 @@ This chapter lists and defines terminologies used in this user guide.
 
 Figure 2.1 shows the system block diagram of the TCA2000 EVB.
 
- **![image-20250509155708714](C:\Users\jekim\AppData\Roaming\Typora\typora-user-images\image-20250509155708714.png)**
-
 ​                             
 
 
@@ -164,9 +162,6 @@ Figure 3.1 and Figure 3.2 show the top view and bottom view of the TCA2000 modul
 
 
 
-![image-20250509170839915](C:\Users\jekim\OneDrive - Telechips\Markdown_TEST_TWT\images\TCA200x User Guide\image-20250509170839915.png)
-
- ![image-20250509160927899](docs/TCC200x/HW/image-20250509170839915.png)
 
 **Figure 3.2 TCA2000 Module Board (Bottom View)**
 
