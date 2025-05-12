@@ -28,7 +28,7 @@ This document describes Linux_YP4.0_IVI usage as follows:
 | :---------------------------------------------------: | :------------------------------------------------------------: |
 | CPU Sub-board                                       | TCC8030_CPU_LPD4321_V1.2.2                                   |
 | Main Board                                          | TCC803X_MAIN_V1.1.1                                          |
-| 12.3” 1920x720 LCD                                  | TM_WLCD_12.3LVDS_SV0.2  TCC80XX_BOE_WLCD_12.3_SV1.1.1    TCCXXXX_AUO_WLCD_12.3_SV0.1.0 |
+| 12.3” 1920x720 LCD                                  | TM_WLCD_12.3LVDS_SV0.2  TCC80XX_BOE_WLCD_12.3_SV1.1.1<br/> TCCXXXX_AUO_WLCD_12.3_SV0.1.0 |
 | Audio and Broadcasting and Radio tuner Board (ABRB) | TCC8XXX_AK4601_SILAB_ISDBT_DAB_SV1.0                         |
 | Jog Navigation Sub-board                            | TCC80XX_KEY_SV0.1                                            |
 
@@ -160,7 +160,7 @@ Table 2.5 Description of Main Board (Bottom View)
 |19|JP6|14-pin Pin Header Male|Select the output channel for CAN and LIN|
 |20|JC7|Fiber optical Jack|Output of S/PDIF|
 |21|JC5|Fiber optical Jack|Input of S/PDIF|
-|22|U19|Power AMP|45W Power AMP<br><br>**Note:** Not mounted on the board|
+|22|U19|Power AMP|45W Power AMP<br/><br/>**Note:** Not mounted on the board|
 |23|JP4|Test Point|Connect the main board to the speaker|
 |24|JH8|30-pin Pin Header Box|Connector for Vehicle signal input|
 
