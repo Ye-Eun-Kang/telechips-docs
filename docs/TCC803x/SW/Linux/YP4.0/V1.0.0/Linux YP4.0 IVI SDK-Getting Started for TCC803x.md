@@ -41,9 +41,9 @@ This document describes Linux_YP4.0_IVI usage as follows:
 
 :::important
 <span style={{color: "blue"}}>
-  <strong>Important:</strong> The default LCD setting of Linux_YP4.0_IVI SDK is fitted with "TCCXXXX_AUO_WLCD_12.3".<br />
+  <strong>Important:</strong></span> The default LCD setting of Linux_YP4.0_IVI SDK is fitted with "TCCXXXX_AUO_WLCD_12.3".<br />
   To use a different LCD, modify the build configuration as described in Chapter 4.6.3.4.3.
-</span>
+
 :::
 
 
