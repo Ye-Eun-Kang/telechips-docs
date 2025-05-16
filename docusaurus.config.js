@@ -36,6 +36,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'), // 반드시 require.resolve!
           editUrl: 'https://github.com/Ye-Eun-Kang/telechips-docs/edit/main/',
+          pagination: false, // previous, next 내비게이션 삭제
         },
         theme: {
           
