@@ -87,28 +87,7 @@ const config = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'TCC803x',
-              to: '/docs/TCC803x/HW/',
-            },
-            {
-              label: 'TCC805x',
-              to: '/docs/TCC805x/HW/',
-            },
-            {
-              label: 'TCC807x',
-              to: '/docs/TCC807x/HW/',
-            },
-            {
-              label: 'TCC200x',
-              to: '/docs/TCC200x/HW/',
-            },
-          ],
-        },
-        {
+             {
           title: 'More',
           items: [
             {
