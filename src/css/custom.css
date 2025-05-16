@@ -48,18 +48,15 @@
 
 
 /* 테이블이 문서 너비를 꽉 채우도록 설정 */
-.theme-doc-markdown,
-.markdown {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
-
-/* 테이블 창에 가득차게 */
 .full-width-table {
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   overflow-x: auto;
+  padding: 1rem 0; /* 위아래 간격 */
 }
 
 .full-width-table table {
@@ -67,7 +64,6 @@
   table-layout: fixed;
   word-break: break-word;
 }
-
 
 
 
