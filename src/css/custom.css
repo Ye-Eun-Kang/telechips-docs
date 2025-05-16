@@ -55,18 +55,19 @@
 }
 
 
-/* 테이블 반응형 스타일 */
-.markdown table {
+/* 테이블 창에 가득차게 */
+.full-width-table {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow-x: auto;
+}
+
+.full-width-table table {
   width: 100%;
   table-layout: fixed;
   word-break: break-word;
-  white-space: normal;
 }
 
-.markdown th,
-.markdown td {
-  padding: 0.5rem;
-}
 
 
 
