@@ -60,19 +60,20 @@
 }
 
 
-/* 1. IMPORTANT 박스 기본 배경은 유지하거나 변경 가능 */
+/* 1. IMPORTANT 박스 전체 배경색 */
 .alert--important {
-  background-color: #e6f7ff; /* 연한 파랑 배경 */
+  background-color: #e6f7ff; /* 연한 파랑 */
+  border-left: 4px solid #3399ff; /* 왼쪽 구분선 색상 */
 }
 
-/* 2. 아이콘 → ❗ 로 변경 (before 가상 요소로 덮어쓰기) */
-.alert--important .admonition-icon::before {
-  content: "❗";  /* 느낌표 아이콘 */
-  font-size: 1.2rem;
+/* 2. 아이콘 색상 변경 */
+.alert--important .admonition-icon svg {
+  fill: #0066cc !important; /* 파란색 아이콘 */
 }
 
-/* 3. 헤딩 텍스트 색상 + bold 설정 */
+/* 3. IMPORTANT 텍스트 스타일 */
 .alert--important .admonition-heading {
-  color: #0066cc;
-  font-weight: bold;
+  color: #0066cc; /* 텍스트 색상 */
+  font-weight: bold; /* 굵게 */
+  font-size: 0.95rem; /* 원하면 크기 조절도 가능 */
 }
