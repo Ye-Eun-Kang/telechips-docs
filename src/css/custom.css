@@ -51,19 +51,23 @@
 .full-width-table {
   width: 100vw;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  left: calc(50% - 50vw);
+  right: auto;
+  margin-left: 0;
+  margin-right: 0;
   overflow-x: auto;
-  padding: 1rem 0; /* 위아래 간격 */
+  padding: 1rem 0;
+  box-sizing: border-box;
+  z-index: 10;
 }
 
 .full-width-table table {
+  min-width: 1000px;
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
   word-break: break-word;
 }
+
 
 
 
