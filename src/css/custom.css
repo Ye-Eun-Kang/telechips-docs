@@ -48,10 +48,12 @@
 
 
 /* 테이블이 문서 너비를 꽉 채우도록 설정 */
-.theme-doc-markdown, 
+.theme-doc-markdown,
 .markdown {
   max-width: 100% !important;
+  width: 100% !important;
 }
+
 
 /* 테이블 반응형 스타일 */
 .markdown table {
