@@ -58,3 +58,21 @@
 .markdown td {
   padding: 0.5rem;
 }
+
+
+/* 1. IMPORTANT 박스 기본 배경은 유지하거나 변경 가능 */
+.alert--important {
+  background-color: #e6f7ff; /* 연한 파랑 배경 */
+}
+
+/* 2. 아이콘 → ❗ 로 변경 (before 가상 요소로 덮어쓰기) */
+.alert--important .admonition-icon::before {
+  content: "❗";  /* 느낌표 아이콘 */
+  font-size: 1.2rem;
+}
+
+/* 3. 헤딩 텍스트 색상 + bold 설정 */
+.alert--important .admonition-heading {
+  color: #0066cc;
+  font-weight: bold;
+}
