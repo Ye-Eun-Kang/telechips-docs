@@ -84,21 +84,6 @@ const config = {
         },
       ],
     },
-    footer: {
-      style: 'dark',
-      links: [
-             {
-          title: 'More',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/Ye-Eun-Kang/telechips-docs',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Telechips. Built with Docusaurus.`,
-    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
