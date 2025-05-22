@@ -73,15 +73,15 @@ const config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'TCC200xSidebar',
-          position: 'left',
-          label: 'TCC200x',
-        },
-        {
-          type: 'docSidebar',
           sidebarId: 'TCCxxxxSidebar',
           position: 'left',
           label: 'TCCxxxx',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'TCC200xSidebar',
+          position: 'left',
+          label: 'TCC200x',
         },
         {
           href: 'https://github.com/Ye-Eun-Kang/telechips-docs',
