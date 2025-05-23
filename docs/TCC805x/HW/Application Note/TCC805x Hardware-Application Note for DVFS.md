@@ -248,7 +248,8 @@ The test result proves that DVFS and DFS can flexibly substitute for changes in 
 
 # References
 
-1.  Contact Telechips for more details: <sales@telechips.com>
+1. Contact Telechips for more details: [sales@telechips.com](mailto:sales@telechips.com)
+
 
 &nbsp;
 
