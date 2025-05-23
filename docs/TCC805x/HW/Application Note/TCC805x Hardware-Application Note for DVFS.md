@@ -159,56 +159,56 @@ Table 4.2 and Figure 4.2 show the results for case 2.
 <table>
   <thead>
     <tr>
-      <th style="text-align: center" rowspan="2" colspan="1">Case 2</th>
-      <th style="text-align: center" rowspan="2" colspan="1">CPU</th>
-      <th style="text-align: center" rowspan="2" colspan="1">Voltage (V)</th>
-      <th style="text-align: center" colspan="2">Current (mA)</th>
-      <th style="text-align: center" colspan="2">Power (mW)</th>
-      <th style="text-align: center" rowspan="2" colspan="1">Ambient Temperature</th>
-      <th style="text-align: center" colspan="1">Junction</th>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">Case 1</th>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">CPU</th>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">Voltage (V)</th>
+      <th style={{ textAlign: 'center' }} colspan="2">Current (mA)</th>
+      <th style={{ textAlign: 'center' }} colspan="2">Power (mW)</th>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">Ambient Temperature</th>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">Junction Temperature</th>
     </tr>
     <tr>
-      <th style="text-align: center" colspan="1">AVR</th>
-      <th style="text-align: center" colspan="1">MAX</th>
-      <th style="text-align: center" colspan="1">AVR</th>
-      <th style="text-align: center" colspan="1">MAX</th>
-      <th style="text-align: center" colspan="1">Temperature</th>
+      <th style={{ textAlign: 'center' }} colspan="1">AVR</th>
+      <th style={{ textAlign: 'center' }} colspan="1">MAX</th>
+      <th style={{ textAlign: 'center' }} colspan="1">AVR</th>
+      <th style={{ textAlign: 'center' }} colspan="1">MAX</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center">Case 2-1</td>
-      <td style="text-align: center">Cortex-A53 Quad</td>
-      <td style="text-align: center">0.9</td>
-      <td style="text-align: center">150</td>
-      <td style="text-align: center">300</td>
-      <td style="text-align: center">135</td>
-      <td style="text-align: center">270</td>
-      <td style="text-align: center" rowspan="3">25℃</td>
-      <td style="text-align: center">46℃</td>
+      <td style={{ textAlign: 'center' }}>Case 1-1</td>
+      <td style={{ textAlign: 'center' }}>Cortex-A72 Quad</td>
+      <td style={{ textAlign: 'center' }}>0.8</td>
+      <td style={{ textAlign: 'center' }}>621</td>
+      <td style={{ textAlign: 'center' }}>1226</td>
+      <td style={{ textAlign: 'center' }}>496</td>
+      <td style={{ textAlign: 'center' }}>980</td>
+      <td style={{ textAlign: 'center' }} rowspan="3">25℃</td>
+      <td style={{ textAlign: 'center' }}>40℃</td>
     </tr>
     <tr>
-      <td style="text-align: center">Case 2-2</td>
-      <td style="text-align: center">Cortex-A53 Quad</td>
-      <td style="text-align: center">0.9</td>
-      <td style="text-align: center">244</td>
-      <td style="text-align: center">481</td>
-      <td style="text-align: center">219</td>
-      <td style="text-align: center">432</td>
-      <td style="text-align: center">46℃</td>
+      <td style={{ textAlign: 'center' }}>Case 1-2</td>
+      <td style={{ textAlign: 'center' }}>Cortex-A72 Quad</td>
+      <td style={{ textAlign: 'center' }}>0.9</td>
+      <td style={{ textAlign: 'center' }}>1088</td>
+      <td style={{ textAlign: 'center' }}>2022</td>
+      <td style={{ textAlign: 'center' }}>979</td>
+      <td style={{ textAlign: 'center' }}>1819</td>
+      <td style={{ textAlign: 'center' }}>44℃</td>
     </tr>
     <tr>
-      <td style="text-align: center">Case 2-3</td>
-      <td style="text-align: center">Cortex-A53 Quad</td>
-      <td style="text-align: center">0.9</td>
-      <td style="text-align: center">324</td>
-      <td style="text-align: center">603</td>
-      <td style="text-align: center">291</td>
-      <td style="text-align: center">542</td>
-      <td style="text-align: center">47℃</td>
+      <td style={{ textAlign: 'center' }}>Case 1-3</td>
+      <td style={{ textAlign: 'center' }}>Cortex-A72 Quad</td>
+      <td style={{ textAlign: 'center' }}>1</td>
+      <td style={{ textAlign: 'center' }}>1450</td>
+      <td style={{ textAlign: 'center' }}>2790</td>
+      <td style={{ textAlign: 'center' }}>1450</td>
+      <td style={{ textAlign: 'center' }}>2790</td>
+      <td style={{ textAlign: 'center' }}>47℃</td>
     </tr>
   </tbody>
 </table>
+
 
   
 
