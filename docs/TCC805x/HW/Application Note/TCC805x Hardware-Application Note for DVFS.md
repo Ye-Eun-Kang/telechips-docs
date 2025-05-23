@@ -14,7 +14,7 @@ The TCC805x consists of Cortex-A72 and Cortex-A53. The Cortex-A72 is used as the
 
 Figure 2.1 is a block diagram of the internal structure of the TCC805x.
 
-![image-20250523104834131](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523104834131.png)
+![image-20250523104834131](https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523104834131.png)
 
 
 
@@ -50,7 +50,7 @@ Voltage regulation is related to the charging and discharging rate. When a high 
 
 Figure 2.2 shows that power consumption is related to voltage and frequency.
 
-![image-20250523105037236](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523105037236.png)
+![image-20250523105037236](https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523105037236.png)
 
 Figure 2.2 Relationship Between Voltage, Frequency, and Power
 
@@ -144,7 +144,7 @@ Table 4.1 Result of Case 1
 
  &nbsp;
 
-![image-20250523131119679](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523131119679.png)
+![image-20250523131119679](https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523131119679.png)
 
   &nbsp;
 
@@ -214,7 +214,7 @@ Table 4.2 and Figure 4.2 show the results for case 2.
 
   &nbsp;
 
-![image-20250523131329292](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523131329292.png)
+![image-20250523131329292](https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523131329292.png)
 
 &nbsp; 
 
@@ -230,7 +230,7 @@ When applying DVFS and DFS to the Cortex-A72 and Cortex-A53 of TCC805x, the meas
 
 &nbsp;
 
-![image-20250523131349419](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523131349419.png)
+![image-20250523131349419](https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523131349419.png)
 
 Figure 5.1 Relationship Between Voltage, Frequency, and Power of TCC805x
 
