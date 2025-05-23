@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 This document provides the results of applying Dynamic Voltage Frequency Scaling (DVFS) function to the core of TCC805x series. This function can efficiently manage the system by adjusting the core voltage and frequency of the system according to the ambient temperature of the environment where the system is located. In addition, this document proves the performance of the DVFS function by including the test process for verifying the function and its results.
 
@@ -6,15 +6,15 @@ This document provides the results of applying Dynamic Voltage Frequency Scaling
 
 &nbsp;
 
-# TCC805x Information
+## TCC805x Information
 
-## TCC805x Structure
+### TCC805x Structure
 
 The TCC805x consists of Cortex-A72 and Cortex-A53. The Cortex-A72 is used as the main core and the Cortex-A53 is used as the sub-core.
 
 Figure 2.1 is a block diagram of the internal structure of the TCC805x.
 
-![image-20250523104834131](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523104834131.png)
+![image-20250523104834131](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523104834131.png)
 
 
 
@@ -42,7 +42,7 @@ Table 2.1 Operating Frequency and Voltage for Each Core of TCC8050, TCC8053, and
 
 &nbsp;
 
-## DVFS Concept
+### DVFS Concept
 
 DVFS is a function that enables efficient system management by adjusting the core voltage and frequency of the system.
 
@@ -50,7 +50,7 @@ Voltage regulation is related to the charging and discharging rate. When a high 
 
 Figure 2.2 shows that power consumption is related to voltage and frequency.
 
-![image-20250523105037236](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523105037236.png)
+![image-20250523105037236](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523105037236.png)
 
 Figure 2.2 Relationship Between Voltage, Frequency, and Power
 
@@ -58,9 +58,9 @@ Figure 2.2 Relationship Between Voltage, Frequency, and Power
 
 &nbsp;
 
-# DVFS Test 
+## DVFS Test 
 
-## Test Condition
+### Test Condition
 
 - Sample: TCC8050
 
@@ -74,7 +74,7 @@ Figure 2.2 Relationship Between Voltage, Frequency, and Power
 
 &nbsp;
 
-## Test Case
+### Test Case
 
 Separate the Cortex-A72 and Cortex-A53 and measure the current consumption and Junction Temperature (Tj) for each DVFS and DFS function.
 
@@ -82,7 +82,7 @@ Separate the Cortex-A72 and Cortex-A53 and measure the current consumption and J
 
 &nbsp;
 
-### Case 1 
+#### Case 1 
 
 Case 1 applies DVFS to Cortex-A72 Core while the frequency and voltage of Cortex-A53 are in the maximum operating state.
 
@@ -103,7 +103,7 @@ Table 3.1 List of Case 1
 
 &nbsp;
 
-### Case 2
+#### Case 2
 
 Case 2 applies DFS to Cortex-A53 Core while the frequency and voltage of Cortex-A72 are in the maximum operating state.
 
@@ -126,9 +126,9 @@ Table 3.2 List of Case 2
 
   &nbsp;
 
-# DVFS Test Result
+## DVFS Test Result
 
-##  Results of Case 1 
+###  Results of Case 1 
 
 The current consumption and temperature results are dependent on the frequency and voltage of the Cortex-A72 Quad. As the frequency and voltage increase, the current consumption and measured temperature value increase.
 
@@ -144,13 +144,13 @@ Table 4.1 Result of Case 1
 
  &nbsp;
 
-![image-20250523131119679](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523131119679.png)
+![image-20250523131119679](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523131119679.png)
 
   &nbsp;
 
   &nbsp;
 
-## Result of Case2
+### Result of Case2
 
 Because the frequency of Cortex-A53 Quad changes, current consumption and temperature results are different. As the frequency increases, the current consumption and measured temperature value increase.
 
@@ -214,13 +214,13 @@ Table 4.2 and Figure 4.2 show the results for case 2.
 
   &nbsp;
 
-![image-20250523131329292](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523131329292.png)
+![image-20250523131329292](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523131329292.png)
 
 &nbsp; 
 
  &nbsp;
 
-# Conclusion
+## Conclusion
 
 When applying DVFS and DFS to the Cortex-A72 and Cortex-A53 of TCC805x, the measured current consumption for each core under the same ambient temperature is different. Also, the junction temperature was measured differently under the same ambient temperature conditions. The results are interpreted as follows.
 
@@ -230,7 +230,7 @@ When applying DVFS and DFS to the Cortex-A72 and Cortex-A53 of TCC805x, the meas
 
 &nbsp;
 
-![image-20250523131349419](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523131349419.png)
+![image-20250523131349419](https://ye-eun-kang.github.io\documentimage\images\TCC805x\HW\Application Note\DVFS\image-20250523131349419.png)
 
 Figure 5.1 Relationship Between Voltage, Frequency, and Power of TCC805x
 
@@ -246,7 +246,7 @@ The test result proves that DVFS and DFS can flexibly substitute for changes in 
 
   &nbsp;
 
-# References
+## References
 
 1. Contact Telechips for more details: [sales@telechips.com](mailto:sales@telechips.com)
 
@@ -259,9 +259,9 @@ The test result proves that DVFS and DFS can flexibly substitute for changes in 
 
 &nbsp;
 
-# Revision History
+## Revision History
 
-## Rev. 1.00: 2024-08-09
+### Rev. 1.00: 2024-08-09
 
 - Changed
   - Title changed from “TCC805x ~~Common~~ Hardware-Application Note for DVFS”
@@ -269,7 +269,7 @@ The test result proves that DVFS and DFS can flexibly substitute for changes in 
 
 &nbsp;
 
-## Rev. 0.01: 2023-02-13
+### Rev. 0.01: 2023-02-13
 
 - Preliminary version release
 
