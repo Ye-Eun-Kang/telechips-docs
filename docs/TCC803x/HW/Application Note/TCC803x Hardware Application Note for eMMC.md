@@ -293,9 +293,8 @@ Resistance RDS value is referred in Table 2.2. The value presented for each manu
 
 ## References
 
-1.  Contact Telechips for more details: <sales@telechips.com>
-
-2.  TCC803x Full Specification.
+1. Contact Telechips for more details: [sales@telechips.com](mailto:sales@telechips.com)
+2.  TCC803x Full Specification
 
 **Note:** Reference documents can be provided whenever available, depending on the terms of a contract. If the reference documents are unavailable, the contents directly related to your development can be guided.
 
