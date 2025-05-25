@@ -179,6 +179,8 @@ Table 3.1 eMMC Pin Assignment of TCC803x EVB
     <tr>
       <td
 
+
+
 - In the TCC803x EVB, eMMC uses the **GPIO_SD0** port.
 
   &nbsp;
@@ -197,15 +199,15 @@ Figure 3.1 Power Block of eMMC
 
 - The eMMC requires a voltage of 3.3V and 1.8V.
 
-&nbsp;
+  - 3.3V is used for flash memory I/F and flash memory power supply.
 
-- 3.3V is used for flash memory I/F and flash memory power supply.
 
-- 1.8V is used for memory controller core and eMMC interface I/O power supply.
+  - 1.8V is used for memory controller core and eMMC interface I/O power supply.
 
-  &nbsp;
+    &nbsp;
 
-  &nbsp;
+    &nbsp;
+
 
 ## eMMC Bus Speed Mode
 
