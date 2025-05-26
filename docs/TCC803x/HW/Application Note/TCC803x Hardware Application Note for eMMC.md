@@ -22,13 +22,13 @@ Table 2.1 eMMC Pin Description
 
 |  **Parameter**   | **Type** | **Description**                                              |
 | :--------------: | :------: | :----------------------------------------------------------- |
-|  V<sub>cc<sub/>  |  Supply  | Flash  memory I/F and Flash memory power supply              |
-| V<sub>ccq <sub/> |  Supply  | Memory  controller core and MMC interface I/O power supply   |
-|  V<sub>ss<sub/>  |  Supply  | Flash  memory I/F and Flash memory ground connection         |
-| V<sub>ssq<sub/>  |  Supply  | Memory  controller core and MMC I/F ground connection        |
-|       VDDi       |    -     | Connect  **VDDi** to ground through 0.1 µF capacitor<br>**Note:** The value presented for each manufacturer differs, so refer to the  manufacturer’s datasheet. |
+|  V<sub>cc</sub>  |  Supply  | Flash  memory I/F and Flash memory power supply              |
+| V<sub>ccq </sub> |  Supply  | Memory  controller core and MMC interface I/O power supply   |
+|  V<sub>ss</sub>  |  Supply  | Flash  memory I/F and Flash memory ground connection         |
+| V<sub>ssq</sub>  |  Supply  | Memory  controller core and MMC I/F ground connection        |
+|       VDDi       |    -     | Connect  **VDDi** to ground through 0.1 µF capacitor<br/>**Note:** The value presented for each manufacturer differs, so refer to the  manufacturer’s datasheet. |
 |       CLK        |  Input   | Clock:  Each cycle directs a 1-bit transfer on the command and DAT lines |
-|       CMD        |  Input   | Command:  A bidirectional channel used for device initialization and command transfers     Command  has two operating modes as follows:  <br>  - Open-drain for initialization <br>  - Push-pull for fast command  transfer |
+|       CMD        |  Input   | Command:  A bidirectional channel used for device initialization and command transfers     Command  has two operating modes as follows:  <br/>  - Open-drain for initialization <br/>  - Push-pull for fast command  transfer |
 |       DAT0       |   I/O    | Data  I/O0: Bidirectional channel used for data transfer     |
 |       DAT1       |   I/O    | Data  I/O1: Bidirectional channel used for data transfer     |
 |       DAT2       |   I/O    | Data  I/O2: Bidirectional channel used for data transfer     |
@@ -177,13 +177,45 @@ Table 3.1 eMMC Pin Assignment of TCC803x EVB
       <td>GPIO_SD0_04</td>
     </tr>
     <tr>
-      <td
+      <td>eMMC_D3</td>
+      <td>AG22</td>
+      <td>GPIO_SD0_05</td>
+    </tr>
+    <tr>
+      <td>eMMC_D4</td>
+      <td>AD21</td>
+      <td>GPIO_SD0_06</td>
+    </tr>
+    <tr>
+      <td>eMMC_D5</td>
+      <td>AF22</td>
+      <td>GPIO_SD0_07</td>
+    </tr>
+    <tr>
+      <td>eMMC_D6</td>
+      <td>AE21</td>
+      <td>GPIO_SD0_08</td>
+    </tr>
+    <tr>
+      <td>eMMC_D7</td>
+      <td>AC21</td>
+      <td>GPIO_SD0_09</td>
+    </tr>
+    <tr>
+      <td>eMMC_RST#</td>
+      <td>AF21</td>
+      <td>GPIO_SD0_14</td>
+    </tr>
+    <tr>
+      <td>eMMC_DQS(DS)</td>
+      <td>AG21</td>
+      <td>GPIO_SD0_10</td>
+    </tr>
+  </tbody>
+</table>
 
-
-
-- In the TCC803x EVB, eMMC uses the **GPIO_SD0** port.
-
-  &nbsp;
+- 
+   In the TCC803x EVB, eMMC uses the **GPIO_SD0** port.  &nbsp;
 
   
 
@@ -350,11 +382,11 @@ This material may include technology owned by the 3rd party licensor and the tec
 
 ***For customers who use licensed Codec ICs and/or licensed codec firmware of mp3:***
 
-“Supply of this product does not convey a license nor imply any right to distribute content created with this product in revenue-generating broadcast systems (terrestrial. Satellite, cable and/or other distribution channels), streaming applications (via internet, intranets and/or other networks), other content distribution systems (pay-audio or audio-on-demand applications and the like) or on physical media (compact discs, digital versatile discs, semiconductor chips, hard drives, memory cards and the like). An independent license for such use is required. For details, please visit <http://mp3licensing.com>”.
+“Supply of this product does not convey a license nor imply any right to distribute content created with this product in revenue-generating broadcast systems (terrestrial. Satellite, cable and/or other distribution channels), streaming applications (via internet, intranets and/or other networks), other content distribution systems (pay-audio or audio-on-demand applications and the like) or on physical media (compact discs, digital versatile discs, semiconductor chips, hard drives, memory cards and the like). An independent license for such use is required. For details, please visit [http://mp3licensing.com](http://mp3licensing.com)”.
 
 ***For customers who use other firmware of mp3:***
 
-“Supply of this product does not convey a license under the relevant intellectual property of Thomson and/or Fraunhofer Gesellschaft nor imply any right to use this product in any finished end user or ready-to-use final product. An independent license for such use is required. For details, please visit <http://mp3licensing.com>”.
+“Supply of this product does not convey a license under the relevant intellectual property of Thomson and/or Fraunhofer Gesellschaft nor imply any right to use this product in any finished end user or ready-to-use final product. An independent license for such use is required. For details, please visit [http://mp3licensing.com](http://mp3licensing.com)”.
 
 ***For customers who use Digital Wave DRA solution:***
 
