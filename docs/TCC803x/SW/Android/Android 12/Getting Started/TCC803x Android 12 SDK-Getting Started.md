@@ -36,7 +36,7 @@ This document describes Automotive Android SDK (AAS) usage as follows:
 
 **Figure 2.1 TCC8030_CPU_LPD4321_V1.2.2**
 
-![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134448818.png)
+<p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134448818.png" style="width:45%;" /></p>
 
 &nbsp; 
 
@@ -46,7 +46,7 @@ This document describes Automotive Android SDK (AAS) usage as follows:
 
 **Figure 2.2 TCC803X_MAIN_V1.1.1**
 
-![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134601944.png)
+<p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134601944.png" style="width:45%;" /></p>
 
 &nbsp; 
 
@@ -56,7 +56,7 @@ This document describes Automotive Android SDK (AAS) usage as follows:
 
 **Figure 2.3 TCC8XXX_AK4601_SILAB_ISDBT_DAB_SV1.0**
 
-![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134721516.png)
+<p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134721516.png" style="width:45%;" /></p>
 
 &nbsp;
 
@@ -68,8 +68,8 @@ This document describes Automotive Android SDK (AAS) usage as follows:
 
 | **Category** |                     **Function Switch**                      | **Description** |
 | :----------: | :----------------------------------------------------------: | :-------------: |
-|  CODEC_SEL   | ![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134813798.png) |     AK4601      |
-|              | ![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134823042.png) |     TCC7604     |
+|  CODEC_SEL   | <p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134813798.png" style="width:45%;" /></p> |     AK4601      |
+|              | <p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134823042.png" style="width:45%;" /></p> |     TCC7604     |
 
 &nbsp;
 
@@ -79,7 +79,7 @@ This document describes Automotive Android SDK (AAS) usage as follows:
 
 **Figure 2.4 TCC80XX_BOE_WLCD_12.3_SV1.1.1**
 
-![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134914704.png)
+<p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134914704.png" style="width:45%;" /></p>
 
 &nbsp;
 
@@ -89,7 +89,7 @@ This document describes Automotive Android SDK (AAS) usage as follows:
 
 **Figure 2.5 TCC80XX_KEY_SV0.1 (Top View)**
 
-![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134942851.png)
+<p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134942851.png" style="width:45%;" /></p>
 
 &nbsp;
 
@@ -97,7 +97,7 @@ This document describes Automotive Android SDK (AAS) usage as follows:
 
 **Figure 2.6 TCC80XX_KEY_SV0.1 (Bottom View)**
 
-![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134955525.png)
+<p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527134955525.png" style="width:45%;" /></p>
 
 &nbsp;
 
@@ -111,7 +111,7 @@ This document describes Automotive Android SDK (AAS) usage as follows:
 
 | **Category** |                   **USB Boot Mode Switch**                   |                        **FWDN Port**                         |
 | ------------ | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| TCC803x      | ![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135144435.png) | ![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135133425.png) |
+| TCC803x      | <p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135144435.png" style="width:45%;" /></p> | <p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135133425.png" style="width:45%;" /></p> |
 
 &nbsp;
 
@@ -123,7 +123,7 @@ Table 2.4 Set to eMMC Boot Mode
 
 | Category |                    eMMC Boot Mode Switch                     |                         Reset Switch                         |                            Note                             |
 | :------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :---------------------------------------------------------: |
-| TCC803x  | ![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135256948.png) | ![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135254175.png) | The reset button is on the bottom left corner of the board. |
+| TCC803x  | <p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135256948.png" style="width:45%;" /></p> | <p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135254175.png" style="width:45%;" /></p> | The reset button is on the bottom left corner of the board. |
 
 &nbsp;
 
@@ -135,7 +135,7 @@ Table 2.4 Set to eMMC Boot Mode
 
 | **Category** | **SNOR/eMMC Boot Mode Switch**                               | **Reset Switch**                                             | **Note**                                                     |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| TCC803x      | ![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135356911.png) | ![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135400032.png) | The  reset button is on the bottom left corner of the board. |
+| TCC803x      | <p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135356911.png" style="width:45%;" /></p> | <p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527135400032.png" style="width:45%;" /></p> | The  reset button is on the bottom left corner of the board. |
 
 &nbsp;
 
@@ -402,7 +402,7 @@ The **c** option means that only the source of the revision branch specified in 
 
 To reduce the downloading time and SDK size, **`clone-depth = "1"`** for a specific AOSP git in the manifest file is specified as follows. The manifest file, “default.xml”, is in the “.repo/manifests” path.
 
-![](https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527142018329.png)
+<p align="center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC803x/SW/Android/12/TCC803x%20Android%2012%20SDK-Getting%20Started/image-20250527142018329.png" style="width:45%;" /></p>
 
 The **`clone-depth`** option means that a shallow clone is created with a history truncated to the number of commits specified by **`depth`** option.
 
