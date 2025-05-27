@@ -758,7 +758,7 @@ Execute **build_abi.sh** in the kernel directory. (file path: kernel/build/build
 
 # References
 
-1.  Contact Telechips for more details: <[sales@telechips.com](mailto:sales@telechips.com)>
+1.  Contact Telechips for more details: [sales@telechips.com](mailto:sales@telechips.com)
 
 2.  For more information about ADB: [https://developer.android.com/studio/releases/platform-tools](https://developer.android.com/studio/releases/platform-tools)
 

@@ -20,3 +20,6 @@ yarn-debug.log*
 yarn-error.log*
 site/
 docs/.obsidian/
+
+# Python file
+**/fix_image_links.py

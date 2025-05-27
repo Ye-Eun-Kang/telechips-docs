@@ -9,15 +9,12 @@ def convert_all_image_links(content):
     def replacer(match):
         raw_path = match.group(1)
         path = raw_path.replace("\\", "/")
-
         if "documentimage" not in path.lower():
             return match.group(0)
 
         try:
             idx = path.lower().index("documentimage")
             relative_path = path[idx + len("documentimage") + 1:]
-
-            # 이미 인코딩된 %20, %23 등을 다시 인코딩하지 않도록 처리
             decoded = unquote(relative_path)
             encoded = quote(decoded)
             return f"![]({GITHUB_IMAGE_BASE}{encoded})"
@@ -27,7 +24,14 @@ def convert_all_image_links(content):
     return re.sub(pattern, replacer, content, flags=re.IGNORECASE)
 
 def convert_email_and_url(content):
-    # 이메일 변환: plain → [email](mailto:email)
+    # 이미 잘못된 Markdown 링크를 감싸고 있는 꺾쇠 괄호 제거: <[xxx](mailto:xxx)> → [xxx](mailto:xxx)
+    content = re.sub(
+        r'<(\[[^\]]+\]\([^)]+\))>',
+        r'\1',
+        content
+    )
+
+    # 일반 텍스트 이메일을 [email](mailto:email) 로 변환
     content = re.sub(
         r'(?<!\()(?<!\[)(?<!mailto:)(\b[\w\.-]+@[\w\.-]+\.\w{2,}\b)',
         r'[\1](mailto:\1)',
@@ -40,6 +44,7 @@ def convert_email_and_url(content):
         r'[\1](\1)',
         content
     )
+
     return content
 
 def ensure_blank_line_after_table(content):
