@@ -74,7 +74,6 @@ def get_image_width_tag(path_from_docimage_root):
 
 # Markdown 이미지 → Zoom 컴포넌트 + 가운데 정렬 + 크기 조정
 def center_resize_images_outside_tables(content):
-    # 테이블 내 이미지는 무시하기 위해 테이블 임시 치환
     table_blocks = re.findall(r"<table[\s\S]*?</table>", content, re.IGNORECASE)
     placeholders = {f"__TABLE_PLACEHOLDER_{i}__": block for i, block in enumerate(table_blocks)}
     for key, block in placeholders.items():
@@ -91,7 +90,7 @@ def center_resize_images_outside_tables(content):
             encoded = quote(decoded)
             width = get_image_width_tag(decoded)
             return (
-                f'<div align="center">\n'
+                f'<div style={{ textAlign: "center" }}>\n'
                 f'  <Zoom>\n'
                 f'    <img src="{GITHUB_IMAGE_BASE}{encoded}" {width} alt="" />\n'
                 f'  </Zoom>\n'
