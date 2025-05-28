@@ -1,0 +1,309 @@
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
+
+## Introduction
+
+This document provides the results of applying Dynamic Voltage Frequency Scaling (DVFS) function to the core of TCC805x series. This function can efficiently manage the system by adjusting the core voltage and frequency of the system according to the ambient temperature of the environment where the system is located. In addition, this document proves the performance of the DVFS function by including the test process for verifying the function and its results.
+
+&nbsp;
+
+&nbsp;
+
+## TCC805x Information
+
+### TCC805x Structure
+
+The TCC805x consists of Cortex-A72 and Cortex-A53. The Cortex-A72 is used as the main core and the Cortex-A53 is used as the sub-core.
+
+Figure 2.1 is a block diagram of the internal structure of the TCC805x.
+
+<Zoom>
+  <img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523104834131.png" width="90%" alt="" />
+</Zoom>
+
+
+
+Figure 2.1 Block Diagram of TCC805x
+
+Table 2.1 provides operating frequency and voltage information for each core of TCC805x.
+
+
+
+Table 2.1 Operating Frequency and Voltage for Each Core of TCC8050, TCC8053, and TCC8059
+
+| **Chip** |    **Item**     |     **CPU**     | **Performance (Frequency)** | **Core voltage** |
+| :------: | :-------------: | :-------------: | :-------------------------: | :--------------: |
+| TCC8050  |    Main Core    | Cortex-A72 Quad |          1.69 GHz           |       1.0V       |
+| Sub-core | Cortex-A53 Quad |    1.45 GHz     |            0.9V             |                  |
+| MCU Core |    Cortex-R5    |     700 MHz     |            0.8V             |                  |
+| TCC8053  |    Main Core    | Cortex-A72 Quad |           1.3 GHz           |       1.0V       |
+| Sub-core | Cortex-A53 Dual |    1.45 GHz     |            0.9V             |                  |
+| MCU Core |    Cortex-R5    |     420 MHz     |            0.8V             |                  |
+| TCC8059  |    Main Core    | Cortex-A72 Quad |           950 MHz           |       0.8V       |
+| Sub-core | Cortex-A53 Quad |     1.1 GHz     |            0.8V             |                  |
+| MCU Core |    Cortex-R5    |     420 MHz     |            0.8V             |                  |
+
+&nbsp;
+
+&nbsp;
+
+### DVFS Concept
+
+DVFS is a function that enables efficient system management by adjusting the core voltage and frequency of the system.
+
+Voltage regulation is related to the charging and discharging rate. When a high voltage is applied, charging and discharging of the capacitance must proceed rapidly. Such fast motion is possible using a high frequency. In addition, DVFS is excellent for low power consumption by driving a high frequency when the system load is high and driving it at a low frequency for a relatively low load.
+
+Figure 2.2 shows that power consumption is related to voltage and frequency.
+
+<Zoom>
+  <img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523105037236.png" width="45%" alt="" />
+</Zoom>
+
+Figure 2.2 Relationship Between Voltage, Frequency, and Power
+
+&nbsp;
+
+&nbsp;
+
+## DVFS Test 
+
+### Test Condition
+
+- Sample: TCC8050
+
+- Board: Internal board for DVFS Test
+
+- Test: Test progress for each case
+
+- Load: CORE Stress 70–80%
+
+&nbsp;
+
+&nbsp;
+
+### Test Case
+
+Separate the Cortex-A72 and Cortex-A53 and measure the current consumption and Junction Temperature (Tj) for each DVFS and DFS function.
+
+&nbsp;
+
+&nbsp;
+
+#### Case 1 
+
+Case 1 applies DVFS to Cortex-A72 Core while the frequency and voltage of Cortex-A53 are in the maximum operating state.
+
+Table 3.1 lists the test conditions for measuring the current consumption and temperature change of the Cortex-A72 Core, based on the frequency and voltage.
+
+Table 3.1 List of Case 1
+
+| **Case 1** |     **CPU**     | **Performance (Frequency)** | **Core Voltage** | **Temperature** |
+| :--------: | :-------------: | :-------------------------: | :--------------: | :-------------: |
+|  Case 1-1  | Cortex-A72 Quad |          0.95 GHz           |       0.8V       |  Ambient = 25℃  |
+|  Case 1-1  | Cortex-A53 Quad |          1.45 GHz           |       0.9V       |  Ambient = 25℃  |
+|  Case 1-2  | Cortex-A72 Quad |          1.46 GHz           |       0.9V       |  Ambient = 25℃  |
+|  Case 1-2  | Cortex-A53 Quad |          1.45 GHz           |       0.9V       |  Ambient = 25℃  |
+|  Case 1-3  | Cortex-A72 Quad |          1.69 GHz           |       1.0V       |  Ambient = 25℃  |
+|  Case 1-3  | Cortex-A53 Quad |          1.45 GHz           |       0.9V       |  Ambient = 25℃  |
+
+ &nbsp;
+
+&nbsp;
+
+#### Case 2
+
+Case 2 applies DFS to Cortex-A53 Core while the frequency and voltage of Cortex-A72 are in the maximum operating state.
+
+Table 3.2 lists the test conditions for measuring the current consumption and temperature change of the Cortex-A53 Core, based on the frequency and voltage.
+
+Table 3.2 List of Case 2
+
+| **Case 2** |     **CPU**     | **Performance (Frequency)** | **Core Voltage** | **Temperature** |
+| :--------: | :-------------: | :-------------------------: | :--------------: | :-------------: |
+|  Case 2-1  | Cortex-A72 Quad |          1.69 GHz           |       1.0V       |  Ambient = 25℃  |
+|  Case 2-1  | Cortex-A53 Quad |           0.7 GHz           |       0.9V       |  Ambient = 25℃  |
+|  Case 2-2  | Cortex-A72 Quad |          1.69 GHz           |       1.0V       |  Ambient = 25℃  |
+|  Case 2-2  | Cortex-A53 Quad |           1.1 GHz           |       0.9V       |  Ambient = 25℃  |
+|  Case 2-3  | Cortex-A72 Quad |          1.69 GHz           |       1.0V       |  Ambient = 25℃  |
+|  Case 2-3  | Cortex-A53 Quad |                             | 1.45 GHz    0.9V |  Ambient = 25℃  |
+
+**Note:** Only DFS, not DVFS, is applied to Cortex-A53. Voltage was changed for Cortex-A53, but no significant effect was found.  
+
+  &nbsp;
+
+  &nbsp;
+
+## DVFS Test Result
+
+###  Results of Case 1 
+
+The current consumption and temperature results are dependent on the frequency and voltage of the Cortex-A72 Quad. As the frequency and voltage increase, the current consumption and measured temperature value increase.
+
+Table 4.1 and Figure 4.1 show the results for case 1.
+
+Table 4.1 Result of Case 1
+
+| **Case 1** |     **CPU**     | **Voltage (V)** | **Current (mA)**-AVR | Current  (mA)-MAX | **Power (mW)-AVR** | Power (mV)-MAX | **Ambient  Temperature** | **Junction**  **Temperature** |
+| :--------: | :-------------: | :-------------: | :------------------: | :---------------: | :----------------: | :------------: | :----------------------: | :---------------------------: |
+|  Case 1-1  | Cortex-A72 Quad |       0.8       |         621          |       1226        |        496         |      980       |           25℃            |              40℃              |
+|  Case 1-2  | Cortex-A72 Quad |       0.9       |         1088         |       2022        |        979         |      1819      |           44℃            |              40℃              |
+|  Case 1-3  | Cortex-A72 Quad |       1.0       |         1450         |       2790        |        1450        |      2790      |           47℃            |              40℃              |
+
+ &nbsp;
+
+<Zoom>
+  <img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523131119679.png" width="45%" alt="" />
+</Zoom>
+
+  &nbsp;
+
+  &nbsp;
+
+### Result of Case2
+
+Because the frequency of Cortex-A53 Quad changes, current consumption and temperature results are different. As the frequency increases, the current consumption and measured temperature value increase.
+
+Table 4.2 and Figure 4.2 show the results for case 2.
+
+<table>
+  <thead>
+    <tr>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">Case 1</th>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">CPU</th>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">Voltage (V)</th>
+      <th style={{ textAlign: 'center' }} colspan="2">Current (mA)</th>
+      <th style={{ textAlign: 'center' }} colspan="2">Power (mW)</th>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">Ambient Temperature</th>
+      <th style={{ textAlign: 'center' }} rowspan="2" colspan="1">Junction Temperature</th>
+    </tr>
+    <tr>
+      <th style={{ textAlign: 'center' }} colspan="1">AVR</th>
+      <th style={{ textAlign: 'center' }} colspan="1">MAX</th>
+      <th style={{ textAlign: 'center' }} colspan="1">AVR</th>
+      <th style={{ textAlign: 'center' }} colspan="1">MAX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style={{ textAlign: 'center' }}>Case 1-1</td>
+      <td style={{ textAlign: 'center' }}>Cortex-A72 Quad</td>
+      <td style={{ textAlign: 'center' }}>0.8</td>
+      <td style={{ textAlign: 'center' }}>621</td>
+      <td style={{ textAlign: 'center' }}>1226</td>
+      <td style={{ textAlign: 'center' }}>496</td>
+      <td style={{ textAlign: 'center' }}>980</td>
+      <td style={{ textAlign: 'center' }} rowspan="3">25℃</td>
+      <td style={{ textAlign: 'center' }}>40℃</td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: 'center' }}>Case 1-2</td>
+      <td style={{ textAlign: 'center' }}>Cortex-A72 Quad</td>
+      <td style={{ textAlign: 'center' }}>0.9</td>
+      <td style={{ textAlign: 'center' }}>1088</td>
+      <td style={{ textAlign: 'center' }}>2022</td>
+      <td style={{ textAlign: 'center' }}>979</td>
+      <td style={{ textAlign: 'center' }}>1819</td>
+      <td style={{ textAlign: 'center' }}>44℃</td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: 'center' }}>Case 1-3</td>
+      <td style={{ textAlign: 'center' }}>Cortex-A72 Quad</td>
+      <td style={{ textAlign: 'center' }}>1</td>
+      <td style={{ textAlign: 'center' }}>1450</td>
+      <td style={{ textAlign: 'center' }}>2790</td>
+      <td style={{ textAlign: 'center' }}>1450</td>
+      <td style={{ textAlign: 'center' }}>2790</td>
+      <td style={{ textAlign: 'center' }}>47℃</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+
+  &nbsp;
+
+<Zoom>
+  <img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523131329292.png" width="45%" alt="" />
+</Zoom>
+
+&nbsp; 
+
+ &nbsp;
+
+## Conclusion
+
+When applying DVFS and DFS to the Cortex-A72 and Cortex-A53 of TCC805x, the measured current consumption for each core under the same ambient temperature is different. Also, the junction temperature was measured differently under the same ambient temperature conditions. The results are interpreted as follows.
+
+- The fact that the current consumption differs depending on the DVFS function under the same temperature conditions means that it operates with low power depending on the situation.
+
+- The fact that the junction temperature differs depending on the DVFS function under the same temperature condition means that the operating temperature condition has become flexible.
+
+&nbsp;
+
+<Zoom>
+  <img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/DVFS/image-20250523131349419.png" width="90%" alt="" />
+</Zoom>
+
+Figure 5.1 Relationship Between Voltage, Frequency, and Power of TCC805x
+
+  &nbsp;
+
+The test result proves that DVFS and DFS can flexibly substitute for changes in ambient temperature, which can efficiently operate the system.
+
+  &nbsp;
+
+**Note:** TCC8059 cannot use the DVFS function due to internal power structure.
+
+  &nbsp;
+
+  &nbsp;
+
+## References
+
+1. Contact Telechips for more details: [sales@telechips.com](mailto:sales@telechips.com)
+
+
+&nbsp;
+
+**Note:** Reference documents can be provided whenever available, depending on the terms of a contract. If the reference documents are unavailable, the contents directly related to your development can be guided.
+
+  &nbsp;
+
+&nbsp;
+
+## Revision History
+
+### Rev. 1.00: 2024-08-09
+
+- Changed
+  - Title changed from “TCC805x ~~Common~~ Hardware-Application Note for DVFS”
+
+
+&nbsp;
+
+### Rev. 0.01: 2023-02-13
+
+- Preliminary version release
+
+&nbsp;
+
+&nbsp;
+
+
+
+###### DISCLAIMER
+
+This material is being made available solely for your internal use with its products and service offerings of Telechips, Inc (“Telechips”). and/or licensors and shall not be used for any other purposes. This material may not be altered, edited, or modified in any way without Telechips’ prior written approval. Unauthorized use or disclosure of this material or the information contained herein is strictly prohibited, and you agree to indemnify Telechips and licensors for any damages or losses suffered by Telechips and/or licensors for any unauthorized uses or disclosures of this material, in whole or part. Further, Telechips, Inc. reserves the right to revise this material and to make changes to its content, at any time, without obligation to notify any person or entity of such revisions or changes.
+
+THIS MATERIAL IS BEING PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESSED, IMPLIED, STATUTORY OR OTHERWISE. TO THE MAXIMUM EXTENT PERMITTED BY LAW, TELECHIPS AND/OR LICENSORS SPECIFICALLY DISCLAIM ALL WARRANTIES OF TITLE, MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, COMPLETENESS OR ACCURACY, AND ALL WARRANTIES ARISING OUT OF TRADE USAGE OR OUT OF A COURSE OF DEALING OR COURSE OF PERFORMANCE. MOREOVER, NEITHER TELECHIPS, INC. NOR LICENSORS, SHALL BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY EXPENSES, LOSSES, USE, OR ACTIONS HOWSOEVER INCURRED OR UNDERTAKEN BY YOU IN RELIANCE ON THIS MATERIAL.
+
+THIS MATERIAL IS DESIGNED FOR GENERAL PURPOSE, AND ACCORDINGLY YOU ARE RESPONSIBLE FOR ALL OR ANY OF INTELLECTUAL PROPERTY LICENSES REQUIRED FOR ACTUAL APPLICATION. TELECHIPS, INC. DOES NOT PROVIDE ANY INDEMNIFICATION FOR ANY INTELLECTUAL PROPERTIES OWNED BY THIRD PARTY.
+
+Copyright Statement
+
+Copyright in this material provided by Telechips, Inc. is owned by Telechips unless otherwise noted. For reproduction or use of Telechips’ copyright material, prior written consent should be obtained from Telechips. That prior written consent, if given, will be subject to conditions that Telechips’ name should be included and interest in the material should be acknowledged when the material is reproduced or quoted, either in whole or in part. You must not copy, adapt, publish, distribute, or commercialize any contents contained in the material in any manner without the written permission of Telechips. Trademarks used in Telechips’ copyright material are the property of Telechips.
+
+***For customers who use Google technology:***
+
+ "Copyright © 2013 Google Inc. All rights reserved.”
