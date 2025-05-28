@@ -4,13 +4,13 @@ import sys
 from urllib.parse import quote, unquote
 from PIL import Image
 
-# GitHub Pages 이미지 기본 주소
+# GitHub Pages에 업로드된 이미지의 기본 URL
 GITHUB_IMAGE_BASE = "https://ye-eun-kang.github.io/documentimage/"
 
-# 로컬 이미지 경로 (비율 분석용)
+# 로컬 이미지 파일 위치 (이미지 비율 계산용)
 LOCAL_IMAGE_ROOT = "C:/Users/ye.kang/Desktop/YE/15. web-base documentation/Github/documentimage/"
 
-# 변환할 입력 파일 지정
+# 입력 파일 인자 받기
 if len(sys.argv) < 2:
     print("❌ 변환할 .md 파일명을 인자로 지정해주세요.")
     print("예: python convert_to_mdx.py '파일명.md'")
@@ -19,7 +19,7 @@ if len(sys.argv) < 2:
 input_file = sys.argv[1]
 output_file = input_file.replace(".md", ".mdx")
 
-# 1. Markdown 이미지 경로 → GitHub 링크로
+# Markdown 이미지 링크 → GitHub Pages 이미지 링크로 변환
 def convert_all_image_links(content):
     pattern = r'!\[[^\]]*?\]\(([^)]+?\.(?:png|jpg|jpeg|svg))\)'
     def replacer(match):
@@ -36,14 +36,14 @@ def convert_all_image_links(content):
             return match.group(0)
     return re.sub(pattern, replacer, content, flags=re.IGNORECASE)
 
-# 2. 이메일 및 URL 자동 링크화
+# 이메일/URL 자동 링크 처리
 def convert_email_and_url(content):
     content = re.sub(r'<(\[[^\]]+\]\([^)]+\))>', r'\1', content)
     content = re.sub(r'(?<!\()(?<!\[)(?<!mailto:)(\b[\w\.-]+@[\w\.-]+\.\w{2,}\b)', r'[\1](mailto:\1)', content)
     content = re.sub(r'<(https?://[^\s>]+)>', r'[\1](\1)', content)
     return content
 
-# 3. </table> 뒤에 공백 삽입
+# </table> 뒤에 빈 줄 삽입 (렌더링 오류 방지)
 def ensure_blank_line_after_table(content):
     lines = content.splitlines()
     fixed = []
@@ -54,7 +54,7 @@ def ensure_blank_line_after_table(content):
                 fixed.append("")
     return "\n".join(fixed)
 
-# 4. 이미지 비율 기반 width 조정
+# 이미지 비율에 따라 width 지정
 def get_image_width_tag(path_from_docimage_root):
     local_path = os.path.join(LOCAL_IMAGE_ROOT, path_from_docimage_root.replace("/", os.sep))
     if not os.path.isfile(local_path):
@@ -72,8 +72,9 @@ def get_image_width_tag(path_from_docimage_root):
     except:
         return 'width="45%"'
 
-# 5. 마크다운 이미지 → Zoom + 가운데 정렬 + width 자동
+# Markdown 이미지 → Zoom 컴포넌트 + 가운데 정렬 + 크기 조정
 def center_resize_images_outside_tables(content):
+    # 테이블 내 이미지는 무시하기 위해 테이블 임시 치환
     table_blocks = re.findall(r"<table[\s\S]*?</table>", content, re.IGNORECASE)
     placeholders = {f"__TABLE_PLACEHOLDER_{i}__": block for i, block in enumerate(table_blocks)}
     for key, block in placeholders.items():
@@ -106,7 +107,7 @@ def center_resize_images_outside_tables(content):
 
     return content
 
-# 6. > [!NOTE] 스타일 → <Admonition> 변환
+# Typora-style [!NOTE] → <Admonition> 변환
 def convert_typora_alerts_to_mdx(content):
     admonition_map = {
         'IMPORTANT': 'important',
@@ -131,6 +132,7 @@ def convert_typora_alerts_to_mdx(content):
             type_ = admonition_map.get(match.group(1).upper(), 'note')
             buffer = []
             continue
+
         if inside:
             if line.strip().startswith('>'):
                 buffer.append(line.strip()[1:].strip())
@@ -150,7 +152,7 @@ def convert_typora_alerts_to_mdx(content):
 
     return "\n".join(converted)
 
-# ================= 실행 =================
+# ===================== 실행 =====================
 if os.path.exists(input_file):
     with open(input_file, "r", encoding="utf-8") as f:
         content = f.read()
@@ -161,16 +163,16 @@ if os.path.exists(input_file):
     converted = center_resize_images_outside_tables(converted)
     converted = convert_typora_alerts_to_mdx(converted)
 
-    # Zoom import 자동 삽입
+    # 필요한 import 구문 자동 삽입
+    import_lines = []
     if '<Zoom>' in converted and "import Zoom from 'react-medium-image-zoom';" not in converted:
-        converted = (
-            "import Zoom from 'react-medium-image-zoom';\n"
-            "import 'react-medium-image-zoom/dist/styles.css';\n\n"
-        ) + converted
-
-    # Admonition import 자동 삽입
+        import_lines.append("import Zoom from 'react-medium-image-zoom';")
+        import_lines.append("import 'react-medium-image-zoom/dist/styles.css';")
     if '<Admonition' in converted and "import Admonition from '@theme/Admonition';" not in converted:
-        converted = "import Admonition from '@theme/Admonition';\n\n" + converted
+        import_lines.append("import Admonition from '@theme/Admonition';")
+
+    if import_lines:
+        converted = "\n".join(import_lines) + "\n\n" + converted
 
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(converted)
