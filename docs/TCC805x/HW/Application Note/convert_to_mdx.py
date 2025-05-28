@@ -4,13 +4,13 @@ import sys
 from urllib.parse import quote, unquote
 from PIL import Image
 
-# GitHub Pages에 업로드된 이미지의 기본 URL
+# GitHub Pages 이미지 기본 주소
 GITHUB_IMAGE_BASE = "https://ye-eun-kang.github.io/documentimage/"
 
-# 로컬 PC에서 이미지 파일의 위치 (이미지 크기 측정용)
+# 로컬 이미지 경로 (비율 분석용)
 LOCAL_IMAGE_ROOT = "C:/Users/ye.kang/Desktop/YE/15. web-base documentation/Github/documentimage/"
 
-# 명령줄에서 변환할 .md 파일명을 인자로 받음
+# 변환할 입력 파일 지정
 if len(sys.argv) < 2:
     print("❌ 변환할 .md 파일명을 인자로 지정해주세요.")
     print("예: python convert_to_mdx.py '파일명.md'")
@@ -19,7 +19,7 @@ if len(sys.argv) < 2:
 input_file = sys.argv[1]
 output_file = input_file.replace(".md", ".mdx")
 
-# 이미지 경로를 GitHub Pages용 링크로 변환
+# 1. Markdown 이미지 경로 → GitHub 링크로
 def convert_all_image_links(content):
     pattern = r'!\[[^\]]*?\]\(([^)]+?\.(?:png|jpg|jpeg|svg))\)'
     def replacer(match):
@@ -36,14 +36,14 @@ def convert_all_image_links(content):
             return match.group(0)
     return re.sub(pattern, replacer, content, flags=re.IGNORECASE)
 
-# 이메일/URL 자동 링크 처리
+# 2. 이메일 및 URL 자동 링크화
 def convert_email_and_url(content):
     content = re.sub(r'<(\[[^\]]+\]\([^)]+\))>', r'\1', content)
     content = re.sub(r'(?<!\()(?<!\[)(?<!mailto:)(\b[\w\.-]+@[\w\.-]+\.\w{2,}\b)', r'[\1](mailto:\1)', content)
     content = re.sub(r'<(https?://[^\s>]+)>', r'[\1](\1)', content)
     return content
 
-# </table> 뒤에 빈 줄 삽입 (렌더링 문제 방지)
+# 3. </table> 뒤에 공백 삽입
 def ensure_blank_line_after_table(content):
     lines = content.splitlines()
     fixed = []
@@ -54,7 +54,7 @@ def ensure_blank_line_after_table(content):
                 fixed.append("")
     return "\n".join(fixed)
 
-# 이미지 비율에 따라 width 값을 결정
+# 4. 이미지 비율 기반 width 조정
 def get_image_width_tag(path_from_docimage_root):
     local_path = os.path.join(LOCAL_IMAGE_ROOT, path_from_docimage_root.replace("/", os.sep))
     if not os.path.isfile(local_path):
@@ -64,17 +64,16 @@ def get_image_width_tag(path_from_docimage_root):
             w, h = img.size
             ratio = w / h
             if ratio > 1.6:
-                return 'width="90%"'  # 가로로 긴 이미지
+                return 'width="90%"'
             elif ratio < 0.8:
-                return 'width="30%"'  # 세로로 긴 이미지
+                return 'width="30%"'
             else:
-                return 'width="45%"'  # 일반적인 이미지
+                return 'width="45%"'
     except:
         return 'width="45%"'
 
-# 마크다운 이미지 문법을 Zoom 컴포넌트 + 가운데 정렬 + width 조절로 변환
+# 5. 마크다운 이미지 → Zoom + 가운데 정렬 + width 자동
 def center_resize_images_outside_tables(content):
-    # 테이블 내부 이미지는 변환하지 않기 위해 테이블 부분 임시 제거
     table_blocks = re.findall(r"<table[\s\S]*?</table>", content, re.IGNORECASE)
     placeholders = {f"__TABLE_PLACEHOLDER_{i}__": block for i, block in enumerate(table_blocks)}
     for key, block in placeholders.items():
@@ -102,13 +101,12 @@ def center_resize_images_outside_tables(content):
 
     content = re.sub(r'!\[\]\(([^)]+?\.(?:png|jpg|jpeg|svg))\)', image_replacer, content)
 
-    # 테이블 복원
     for key, block in placeholders.items():
         content = content.replace(key, block)
 
     return content
 
-# Typora 스타일의 알림 블록 (NOTE, TIP 등) → MDX의 <Admonition> 컴포넌트로 변환
+# 6. > [!NOTE] 스타일 → <Admonition> 변환
 def convert_typora_alerts_to_mdx(content):
     admonition_map = {
         'IMPORTANT': 'important',
@@ -133,7 +131,6 @@ def convert_typora_alerts_to_mdx(content):
             type_ = admonition_map.get(match.group(1).upper(), 'note')
             buffer = []
             continue
-
         if inside:
             if line.strip().startswith('>'):
                 buffer.append(line.strip()[1:].strip())
@@ -153,12 +150,11 @@ def convert_typora_alerts_to_mdx(content):
 
     return "\n".join(converted)
 
-# ===================== 실제 변환 처리 =====================
+# ================= 실행 =================
 if os.path.exists(input_file):
     with open(input_file, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # 각 처리 함수 순차 실행
     converted = convert_all_image_links(content)
     converted = convert_email_and_url(converted)
     converted = ensure_blank_line_after_table(converted)
@@ -176,7 +172,6 @@ if os.path.exists(input_file):
     if '<Admonition' in converted and "import Admonition from '@theme/Admonition';" not in converted:
         converted = "import Admonition from '@theme/Admonition';\n\n" + converted
 
-    # 결과 저장
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(converted)
 
