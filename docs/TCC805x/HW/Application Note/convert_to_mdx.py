@@ -177,11 +177,11 @@ def center_and_resize_all_tables(content):
         table_html = match.group(0)
         styled_table = re.sub(
             r'<table(.*?)>',
-            r'<table\1 style="width:950px; border-collapse: collapse;">',
+            r'<table\1 style="display: inline-block; width:950px; border-collapse: collapse;">',
             table_html,
             flags=re.IGNORECASE
         )
-        return f'<div style="display: flex; justify-content: center;">\n{styled_table}\n</div>'
+        return f'<div style="text-align: center;">\n{styled_table}\n</div>'
 
     content = re.sub(r'<table[\s\S]*?</table>', wrap_existing_html_tables, content, flags=re.IGNORECASE)
 
@@ -196,7 +196,8 @@ def center_and_resize_all_tables(content):
         rows = [[cell.strip() for cell in row.split('|')[1:-1]] for row in table_md[2:]]
 
         html = []
-        html.append('<table style="margin: auto; width: 950px; border-collapse: collapse;">')
+        html.append('<div style="text-align: center;">')
+        html.append('<table style="display: inline-block; width:950px; border-collapse: collapse;">')
         html.append('<thead><tr>')
         for h in headers:
             html.append(f'<th style="border:1px solid #ccc; padding: 6px; text-align: center;">{h}</th>')
@@ -207,7 +208,8 @@ def center_and_resize_all_tables(content):
             for cell in row:
                 html.append(f'<td style="border:1px solid #ccc; padding: 6px; text-align: center;">{cell}</td>')
             html.append('</tr>')
-        html.append('</tbody></table>\n')
+        html.append('</tbody></table>')
+        html.append('</div>\n')
 
         return "\n" + "\n".join(html)
 
@@ -215,6 +217,7 @@ def center_and_resize_all_tables(content):
     content = md_table_pattern.sub(convert_md_table, content)
 
     return content
+
 
 
     # JSX 컴포넌트 자동 import 삽입 및 불필요한 import 제거
