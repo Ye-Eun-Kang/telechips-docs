@@ -195,8 +195,8 @@ def center_and_resize_all_tables(content):
         aligns = [a.strip() for a in table_md[1].split('|')[1:-1]]
         rows = [[cell.strip() for cell in row.split('|')[1:-1]] for row in table_md[2:]]
 
-        html = ['<div style="display: flex; justify-content: center;">']
-        html.append('<table style="width:950px; border-collapse: collapse;">')
+        html = []
+        html.append('<table style="margin: auto; width: 950px; border-collapse: collapse;">')
         html.append('<thead><tr>')
         for h in headers:
             html.append(f'<th style="border:1px solid #ccc; padding: 6px; text-align: center;">{h}</th>')
@@ -207,13 +207,65 @@ def center_and_resize_all_tables(content):
             for cell in row:
                 html.append(f'<td style="border:1px solid #ccc; padding: 6px; text-align: center;">{cell}</td>')
             html.append('</tr>')
-        html.append('</tbody></table></div>\n')
+        html.append('</tbody></table>\n')
+
         return "\n" + "\n".join(html)
 
     md_table_pattern = re.compile(r'(?:^|\n)((?:\|.*?\|(?:\n|$))+)', re.MULTILINE)
     content = md_table_pattern.sub(convert_md_table, content)
 
     return content
+
+
+    # JSX 컴포넌트 자동 import 삽입 및 불필요한 import 제거
+def update_imports(content):
+    """
+    JSX 컴포넌트가 사용된 경우:
+    - 필요한 import만 삽입
+    - 기존 중복 import 제거
+    - 사용되지 않은 import 자동 제거
+    """
+    # JSX 컴포넌트와 import 경로 매핑
+    component_import_map = {
+        "ZoomableImage": "import ZoomableImage from '@site/src/components/ZoomableImage';",
+        "Admonition": "import Admonition from '@theme/Admonition';",
+        # 필요 시 여기 계속 확장 가능
+    }
+
+    # 줄 단위로 나누어 import와 body 구분
+    lines = content.splitlines()
+    existing_imports = []
+    body_lines = []
+    for line in lines:
+        if line.strip().startswith("import "):
+            existing_imports.append(line.strip())
+        else:
+            body_lines.append(line)
+
+    body_text = "\n".join(body_lines)
+
+    # 본문에 실제로 사용된 컴포넌트만 수집
+    used_components = [
+        component for component in component_import_map
+        if f"<{component}" in body_text
+    ]
+
+    # 필요한 import만 재생성
+    final_imports = [component_import_map[c] for c in used_components]
+
+    # 기존 import 중에서도 중복되거나 사용되지 않은 항목 제거
+    cleaned_body_lines = [
+        line for line in body_lines
+        if not any(imp in line for imp in component_import_map.values())
+    ]
+
+    # 최종 MDX 본문 재구성
+    result = ""
+    if final_imports:
+        result += "\n".join(final_imports) + "\n\n"
+    result += "\n".join(cleaned_body_lines).lstrip()
+    return result
+
 
 
 # 실행 메인
@@ -229,17 +281,9 @@ if os.path.exists(input_file):
     converted = center_resize_images_outside_tables(converted)
     converted = convert_typora_alerts_to_mdx(converted)
     converted = center_and_resize_all_tables(converted) 
+    converted = update_imports(converted)
 
-    # 필요한 import 삽입 (중복 삽입 방지)
-    import_lines = []
-    if "<ZoomableImage" in converted:
-        import_lines.append("import ZoomableImage from '@site/src/components/ZoomableImage';")
-    if "<Admonition" in converted:
-        import_lines.append("import Admonition from '@theme/Admonition';")
-
-    if import_lines:
-        converted = "\n".join(import_lines) + "\n\n" + converted
-
+    # 결과 저장
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(converted)
 
