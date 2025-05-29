@@ -27,6 +27,7 @@ export default function ZoomableImage({ src, width = "60%" }) {
           maxZoomPixelRatio: 3,     // 확대 비율 제한
           scrollToZoom: true        // 마우스 휠 확대 허용
         }}
+        closeOnBackdropClick={true}  // ✅ 배경 클릭 시 닫히도록 명시
         animation={{ zoom: 300 }}
         styles={{
           navigationPrev: { display: "none" },
