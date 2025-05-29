@@ -169,6 +169,53 @@ def convert_typora_alerts_to_mdx(content):
 
     return "\n".join(converted)
 
+
+    # Markdown 테이블 → HTML 변환 + 전체 테이블 가운데 정렬 및 너비 고정
+def center_and_resize_all_tables(content):
+    # 기존 HTML <table> 감싸고 스타일 삽입
+    def wrap_existing_html_tables(match):
+        table_html = match.group(0)
+        styled_table = re.sub(
+            r'<table(.*?)>',
+            r'<table\1 style="width:950px; border-collapse: collapse;">',
+            table_html,
+            flags=re.IGNORECASE
+        )
+        return f'<div style="display: flex; justify-content: center;">\n{styled_table}\n</div>'
+
+    content = re.sub(r'<table[\s\S]*?</table>', wrap_existing_html_tables, content, flags=re.IGNORECASE)
+
+    # 마크다운 테이블을 HTML <table>로 변환하고 정렬
+    def convert_md_table(match):
+        table_md = match.group(1).strip().splitlines()
+        if len(table_md) < 2 or not re.match(r'^\s*\|[-\s|:]+\|\s*$', table_md[1]):
+            return match.group(0)
+
+        headers = [h.strip() for h in table_md[0].split('|')[1:-1]]
+        aligns = [a.strip() for a in table_md[1].split('|')[1:-1]]
+        rows = [[cell.strip() for cell in row.split('|')[1:-1]] for row in table_md[2:]]
+
+        html = ['<div style="display: flex; justify-content: center;">']
+        html.append('<table style="width:950px; border-collapse: collapse;">')
+        html.append('<thead><tr>')
+        for h in headers:
+            html.append(f'<th style="border:1px solid #ccc; padding: 6px; text-align: center;">{h}</th>')
+        html.append('</tr></thead>')
+        html.append('<tbody>')
+        for row in rows:
+            html.append('<tr>')
+            for cell in row:
+                html.append(f'<td style="border:1px solid #ccc; padding: 6px; text-align: center;">{cell}</td>')
+            html.append('</tr>')
+        html.append('</tbody></table></div>\n')
+        return "\n" + "\n".join(html)
+
+    md_table_pattern = re.compile(r'(?:^|\n)((?:\|.*?\|(?:\n|$))+)', re.MULTILINE)
+    content = md_table_pattern.sub(convert_md_table, content)
+
+    return content
+
+
 # 실행 메인
 if os.path.exists(input_file):
     with open(input_file, "r", encoding="utf-8") as f:
@@ -181,6 +228,7 @@ if os.path.exists(input_file):
     converted = replace_zoom_wrapped_images(converted)
     converted = center_resize_images_outside_tables(converted)
     converted = convert_typora_alerts_to_mdx(converted)
+    converted = center_and_resize_all_tables(converted) 
 
     # 필요한 import 삽입 (중복 삽입 방지)
     import_lines = []
