@@ -60,10 +60,38 @@ def replace_zoom_wrapped_images(content):
 
 # 이메일, URL 자동 링크 변환
 def convert_email_and_url(content):
+    """
+    1. 중복 방지를 위해, 이미 링크 처리된 항목은 제외
+    2. 순수 이메일 → mailto 링크로 변환
+    3. <https://...> → [url](url) 링크로 변환
+    4. 일반 도메인 → https:// 붙여 링크 변환
+    """
+
+    # 이미 링크 처리된 형식 제거
     content = re.sub(r'<(\[[^\]]+\]\([^)]+\))>', r'\1', content)
-    content = re.sub(r'(?<!\()(?<!\[)(?<!mailto:)(\b[\w\.-]+@[\w\.-]+\.\w{2,}\b)', r'[\1](mailto:\1)', content)
+
+    # 이메일 변환
+    content = re.sub(
+        r'(?<!\[)(?<!mailto:)(?<!\]\()(?<!\]\(mailto:)(?<!mailto:)\b[\w\.-]+@[\w\.-]+\.\w{2,}\b(?!\))',
+        lambda m: f"[{m.group(0)}](mailto:{m.group(0)})",
+        content
+    )
+
+    # <https://url> 변환
     content = re.sub(r'<(https?://[^\s>]+)>', r'[\1](\1)', content)
+
+    # 일반 도메인 변환 (www.example.com 등)
+    domain_pattern = r'(?<![\w/])((?:https?://)?(?:www\.)?[\w.-]+\.\w{2,})(?![\w/])'
+    def linkify_domain(match):
+        url = match.group(1)
+        if url.startswith("http"):
+            return f"[{url}]({url})"
+        else:
+            return f"[{url}](https://{url})"
+    content = re.sub(domain_pattern, linkify_domain, content)
+
     return content
+
 
 # </table> 다음 줄바꿈 삽입
 def ensure_blank_line_after_table(content):
