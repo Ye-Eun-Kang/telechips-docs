@@ -122,6 +122,29 @@ def get_image_width_tag(path_from_docimage_root):
     except:
         return 'width="45%"'
 
+# <img src="..."> 태그 → <ZoomableImage> 로 변환
+def convert_img_tags_to_zoomable(content):
+    def replacer(match):
+        img_tag = match.group(0)
+        src_match = re.search(r'src="([^"]+)"', img_tag)
+        if not src_match:
+            return img_tag
+        img_src = src_match.group(1)
+        if "documentimage" not in img_src.lower():
+            return img_tag
+        try:
+            idx = img_src.lower().index("documentimage")
+            relative_path = img_src[idx + len("documentimage") + 1:]
+            decoded = unquote(relative_path)
+            encoded = quote(decoded)
+            width = get_image_width_tag(decoded).replace('width=', '').replace('"', '')
+            return f'<ZoomableImage src="{GITHUB_IMAGE_BASE}{encoded}" width="{width}" />'
+        except:
+            return img_tag
+    return re.sub(r'<img\s+[^>]*src="[^"]+?"[^>]*>', replacer, content, flags=re.IGNORECASE)
+
+
+
 # 일반 마크다운 이미지도 <ZoomableImage />로 변환
 def center_resize_images_outside_tables(content):
     table_blocks = re.findall(r"<table[\s\S]*?</table>", content, re.IGNORECASE)
@@ -258,6 +281,7 @@ if os.path.exists(input_file):
     converted = convert_all_image_links(content)
     converted = convert_email_and_url(converted)
     converted = ensure_blank_line_after_table(converted)
+    converted = convert_img_tags_to_zoomable (converted)
     converted = replace_zoom_wrapped_images(converted)
     converted = center_resize_images_outside_tables(converted)
     converted = convert_typora_alerts_to_mdx(converted)
