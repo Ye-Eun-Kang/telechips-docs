@@ -15,7 +15,7 @@ You can access to Telechips git server and download the revisions.
 
 
 
-### <span style={{color:'#255B98'}}>  **📦Download SDK as follows:**</span>
+### <span style={{ color: '#255B98' }}>  **📦Download SDK as follows:**</span>
 
 ```
 $ repo init -u ssh://rgit.telechips.com/android/android14_ivi/1.1.0/platform/manifest -b android14_ivi_1.1.0 -m default.xml
@@ -24,7 +24,7 @@ $ repo sync
 
 
 
-### <span style={{color:'#255B98'}}>  **🧩Supported Product**</span>
+### <span style={{ color: '#255B98' }}>  **🧩Supported Product**</span>
 
 - TCC8070(CS) EVB
 
@@ -32,7 +32,7 @@ $ repo sync
 
 
 
-### <span style={{color:'#255B98'}}>  **📚Reference Documents**</span>
+### <span style={{ color: '#255B98' }}>  **📚Reference Documents**</span>
 
  **TCC8070 :**
 
@@ -50,7 +50,7 @@ $ repo sync
 
 
 
-### ❓<span style={{color:'#255B98'}}>  **Troubleshoot** </span>
+### ❓<span style={{ color: '#255B98' }}>  **Troubleshoot** </span>
 
 ✅ Access denied?
   -   Contact Telechips: sales@telechips.com
