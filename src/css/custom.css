@@ -91,3 +91,10 @@
   font-weight: bold; /* 굵게 */
   font-size: 0.95rem; /* 원하면 크기 조절도 가능 */
 }
+
+
+/* Text 제목 telechips color */
+.text-blue {
+  color: #255B98;
+  font-weight: bold;
+}
