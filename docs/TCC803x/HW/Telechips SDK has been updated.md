@@ -1,10 +1,3 @@
----
-title: "Telechips Android 14 IVI SDK v1.1.0 Release"
-description: "SDK release notes and instructions for TCC807x and TCC805x EVBs"
----
-
-import { Alert } from "@/components/Alert"
-import { CodeBlock } from "@/components/CodeBlock"
 
 # 🚀 Telechips Android 14 IVI SDK v1.1.0 Release
 
@@ -42,17 +35,17 @@ $ repo sync
 
 ### 📌 TCC8070
 
-- <a href="#">Android 14 IVI SDK - Getting Started for TCC807x v1.30[A].pdf</a>
-- <a href="#">Android 14 IVI SDK - How to Calculate PMAP for TCC807x v1.10[A].xlsx</a>
-- <a href="#">Android 14 IVI SDK - Benchmark Result for TCC807x v1.10[A].pdf</a>
-- <a href="#">Android 14 IVI SDK - Release Note for TCC807x v1.1.0[A].pdf</a>
+- Android 14 IVI SDK - Getting Started for TCC807x v1.30\[A\].pdf
+- Android 14 IVI SDK - How to Calculate PMAP for TCC807x v1.10\[A\].xlsx
+- Android 14 IVI SDK - Benchmark Result for TCC807x v1.10\[A\].pdf
+- Android 14 IVI SDK - Release Note for TCC807x v1.1.0\[A\].pdf
 
 ### 📌 TCC805x
 
-- <a href="#">Android 14 IVI SDK - Getting Started for TCC805x v1.20[A].pdf</a>
-- <a href="#">Android 14 IVI SDK - How to Calculate PMAP for TCC805x v1.10[A].xlsx</a>
-- <a href="#">Android 14 IVI SDK - Benchmark Result for TCC805x v1.10[A].pdf</a>
-- <a href="#">Android 14 IVI SDK - Release Note for TCC805x v1.1.0[A].pdf</a>
+- Android 14 IVI SDK - Getting Started for TCC805x v1.20\[A\].pdf
+- Android 14 IVI SDK - How to Calculate PMAP for TCC805x v1.10\[A\].xlsx
+- Android 14 IVI SDK - Benchmark Result for TCC805x v1.10\[A\].pdf
+- Android 14 IVI SDK - Release Note for TCC805x v1.1.0\[A\].pdf
 
 ---
 
@@ -60,6 +53,6 @@ $ repo sync
 
 <Alert type="info">
   ✅ <strong>Access Denied?</strong><br />
-  Please contact <a href="mailto:sales@telechips.com">sales@telechips.com</a>
+  Please contact <strong>sales@telechips.com</strong>
 </Alert>
 
