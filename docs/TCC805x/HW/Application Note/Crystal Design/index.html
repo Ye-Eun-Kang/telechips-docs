@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-TCC805x/HW/Application Note/Crystal Design" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Introduction | T-Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://Ye-Eun-Kang.github.io/telechips-docs/img/Telechips_web-icon-192x192.png"><meta data-rh="true" name="twitter:image" content="https://Ye-Eun-Kang.github.io/telechips-docs/img/Telechips_web-icon-192x192.png"><meta data-rh="true" property="og:url" content="https://Ye-Eun-Kang.github.io/telechips-docs/docs/TCC805x/HW/Application Note/Crystal Design"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Introduction | T-Docs"><meta data-rh="true" name="description" content="This document describes how to configure hardware by using crystal oscillator and TCC805x and provides design guide for optimum performance."><meta data-rh="true" property="og:description" content="This document describes how to configure hardware by using crystal oscillator and TCC805x and provides design guide for optimum performance."><link data-rh="true" rel="icon" href="/telechips-docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://Ye-Eun-Kang.github.io/telechips-docs/docs/TCC805x/HW/Application Note/Crystal Design"><link data-rh="true" rel="alternate" href="https://Ye-Eun-Kang.github.io/telechips-docs/docs/TCC805x/HW/Application Note/Crystal Design" hreflang="en"><link data-rh="true" rel="alternate" href="https://Ye-Eun-Kang.github.io/telechips-docs/docs/TCC805x/HW/Application Note/Crystal Design" hreflang="x-default"><link rel="stylesheet" href="/telechips-docs/assets/css/styles.ebbdb456.css">
+<script src="/telechips-docs/assets/js/runtime~main.7b54b3bd.js" defer="defer"></script>
+<script src="/telechips-docs/assets/js/main.a9920aab.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/telechips-docs/img/Telechips_web-icon-192x192.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612131442006.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612131955890.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132124558.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132213252.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132423914.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132445935.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132544932.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132632886.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132642810.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132743673.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132848287.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132940881.png"><link rel="preload" as="image" href="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612133004260.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/telechips-docs/"><div class="navbar__logo"><img src="/telechips-docs/img/Telechips_web-icon-192x192.png" alt="Telechips Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/telechips-docs/img/Telechips_web-icon-192x192.png" alt="Telechips Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">T-Docs</b></a><a class="navbar__item navbar__link" href="/telechips-docs/docs/TCC803x/HW/Application Note/TCC803x Hardware Application Note for eMMC">TCC803x</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/telechips-docs/docs/TCC805x/HW/Application Note/Choosing Pull-up and Pull-down Resistor at Input Port">TCC805x</a><a class="navbar__item navbar__link" href="/telechips-docs/docs/TCC807x/HW/Application Note/PDN Specification on Board">TCC807x</a><a class="navbar__item navbar__link" href="/telechips-docs/docs/TCCxxxx/HW/document1">TCCxxxx</a><a class="navbar__item navbar__link" href="/telechips-docs/docs/TCC200x/HW/Application Note/TCA2000_Hardware_User_Guide">TCC200x</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/Ye-Eun-Kang/telechips-docs" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/telechips-docs/docs/TCC805x/HW/Application Note/Choosing Pull-up and Pull-down Resistor at Input Port">HW</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/telechips-docs/docs/TCC805x/HW/Application Note/Choosing Pull-up and Pull-down Resistor at Input Port">Application Note</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/telechips-docs/docs/TCC805x/HW/Application Note/Choosing Pull-up and Pull-down Resistor at Input Port">Choosing Pull-up and Pull-down Resistor at Input Port</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/telechips-docs/docs/TCC805x/HW/Application Note/Crystal Design">Introduction</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/telechips-docs/docs/TCC805x/HW/Application Note/TCC805x Hardware-Application Note for DVFS">TCC805x Hardware-Application Note for DVFS</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/telechips-docs/docs/TCC805x/HW/Application Note/문서 2">문서 2</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/telechips-docs/docs/TCC805x/HW/User Guide/문서 1">User Guide</a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/telechips-docs/docs/TCC805x/SW/Android/Android 13/getting-started">SW</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/telechips-docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">HW</span><meta itemprop="position" content="1"></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Application Note</span><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Introduction</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Introduction</h1></header>
+<p>This document describes how to configure hardware by using crystal oscillator and TCC805x and provides design guide for optimum performance.</p>
+<p> </p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="basic-feature-of-crystal-oscillator">Basic Feature of Crystal Oscillator<a href="#basic-feature-of-crystal-oscillator" class="hash-link" aria-label="Direct link to Basic Feature of Crystal Oscillator" title="Direct link to Basic Feature of Crystal Oscillator">​</a></h2>
+<p>This chapter describes the basic feature of crystal oscillator.</p>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="basic-circuitry-of-crystal-oscillator">Basic Circuitry of Crystal Oscillator<a href="#basic-circuitry-of-crystal-oscillator" class="hash-link" aria-label="Direct link to Basic Circuitry of Crystal Oscillator" title="Direct link to Basic Circuitry of Crystal Oscillator">​</a></h3>
+<p>Most of the Integrated Circuits (IC)s use an external crystal oscillator as a clock source.</p>
+<p> </p>
+<p>The features of typical crystal oscillator are as follows:</p>
+<ul>
+<li>
+<p>Cost effective</p>
+</li>
+<li>
+<p>Low power consumption</p>
+</li>
+<li>
+<p>Stability as parallel oscillator circuit</p>
+</li>
+</ul>
+<p> </p>
+<p>Figure 1.1 shows the typical crystal oscillator circuit.</p>
+<p>​     </p><div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612131442006.png" alt="" style="cursor:zoom-in;width:30%"></div><p></p>
+<p><strong>Figure 1.1 Crystal Oscillator Circuit</strong></p>
+<p> </p>
+<p>Normally, each part in the circuit operates as follows:</p>
+<ul>
+<li>
+<p>Inverting Amplifier: Internal inverter as an amplifier</p>
+</li>
+<li>
+<p>R<sub>F</sub>: Feedback resistor to bias the amplifier</p>
+</li>
+<li>
+<p>R<sub>S</sub>: Series resistor to limit amplifier gain and reduce power dissipation in the crystal</p>
+</li>
+<li>
+<p>C<sub>L1</sub>, C<sub>L2</sub>: Load capacitance of the crystal</p>
+</li>
+<li>
+<p>C<sub>S</sub>: Parasitic capacitance (Refer to Chapter 1.2.6.)</p>
+</li>
+</ul>
+<p> </p>
+<p> </p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-of-crystal-specification">Parameters of Crystal Specification<a href="#parameters-of-crystal-specification" class="hash-link" aria-label="Direct link to Parameters of Crystal Specification" title="Direct link to Parameters of Crystal Specification">​</a></h2>
+<p>To select an adaptive crystal for circuit design, you should find the appropriate parameters in the crystal datasheet. Crystal vendors support several parameters that are important to design the circuit for the optimum board performance.</p>
+<p>Table 1.1 describes normal parameters in the crystal datasheet.</p>
+<p><strong>Table 1.1 Crystal Parameter</strong></p>
+<table><thead><tr><th style="text-align:center"><strong>Parameter</strong></th><th style="text-align:center"><strong>Symbol</strong></th><th style="text-align:center"><strong>Unit</strong></th><th style="text-align:center"><strong>Remark</strong></th></tr></thead><tbody><tr><td style="text-align:center">Frequency</td><td style="text-align:center">f<sub>O</sub></td><td style="text-align:center">kHz or MHz</td><td style="text-align:center">@ 25 °C</td></tr><tr><td style="text-align:center">Frequency Tolerance</td><td style="text-align:center">Δf/f<sub>O</sub></td><td style="text-align:center">ppm</td><td style="text-align:center"></td></tr><tr><td style="text-align:center">Frequency Stability</td><td style="text-align:center">Δf/f<sub>O</sub></td><td style="text-align:center">ppm</td><td style="text-align:center"></td></tr><tr><td style="text-align:center">Drive Level (DL)</td><td style="text-align:center">DL</td><td style="text-align:center">µW</td><td style="text-align:center">Maximum</td></tr><tr><td style="text-align:center">Equivalent Series Resistance (ESR)</td><td style="text-align:center">R1</td><td style="text-align:center">Ω</td><td style="text-align:center">@ 25 °C</td></tr><tr><td style="text-align:center">Load Capacitance</td><td style="text-align:center">C<sub>O</sub></td><td style="text-align:center">pF</td><td style="text-align:center"></td></tr><tr><td style="text-align:center">Shunt Capacitance</td><td style="text-align:center">C<sub>O</sub></td><td style="text-align:center">pF</td><td style="text-align:center"></td></tr></tbody></table>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="frequency">Frequency<a href="#frequency" class="hash-link" aria-label="Direct link to Frequency" title="Direct link to Frequency">​</a></h3>
+<p>Normally, f<sub>O</sub> indicates the operating frequency of the crystal.</p>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="frequency-tolerance">Frequency Tolerance<a href="#frequency-tolerance" class="hash-link" aria-label="Direct link to Frequency Tolerance" title="Direct link to Frequency Tolerance">​</a></h3>
+<p>Frequency tolerance (Δf/f<sub>O</sub>) is a frequency deviation, which is a factor that indicates the accuracy of the crystal clock at 25 °C.</p>
+<p>And it measures how close the crystal clock is to the desired frequency.</p>
+<p>The frequency tolerance factor is usually defined in parts per million (ppm).</p>
+<p> </p>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="frequency-stability">Frequency Stability<a href="#frequency-stability" class="hash-link" aria-label="Direct link to Frequency Stability" title="Direct link to Frequency Stability">​</a></h3>
+<p>Frequency stability defines the frequency deviation over the given operating temperature range.</p>
+<p>The frequency stability factor is usually defined in parts per million (ppm).</p>
+<p> </p>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="drive-level">Drive Level<a href="#drive-level" class="hash-link" aria-label="Direct link to Drive Level" title="Direct link to Drive Level">​</a></h3>
+<p>Drive Level DL indicates the maximum amount of the crystal that can be consumed while maintaining the specified performance.</p>
+<p>DL is a measurement of the power applied to the resonator by inverting the amplifier in the External Crystal Oscillator (ECO) circuit.</p>
+<p>A high DL causes damage such as reducing the life-cycle in your system. Therefore, you should select the crystal oscillator to meet the DL specification.</p>
+<p>Usually, crystal vendors specify the maximum DL that may be applied to their crystal oscillator in the datasheet.</p>
+<p> </p>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="equivalent-series-resistance">Equivalent Series Resistance<a href="#equivalent-series-resistance" class="hash-link" aria-label="Direct link to Equivalent Series Resistance" title="Direct link to Equivalent Series Resistance">​</a></h3>
+<p>Equivalent Series Resistance (ESR) indicates the resistive value of the crystal equivalent circuit with the resonating frequency.</p>
+<p>If you design the system with low ESR crystal, the crystal can be damaged at high DL. If you design the system with high ESR crystal, the system can be unstable.</p>
+<p>The ESR is typically specified as a maximum resistance value.</p>
+<p> </p>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="load-capacitance">Load Capacitance<a href="#load-capacitance" class="hash-link" aria-label="Direct link to Load Capacitance" title="Direct link to Load Capacitance">​</a></h3>
+<p>Load capacitance (C<sub>L</sub>) is the total capacitance of C<sub>L1</sub> and C<sub>L2</sub> in Figure 1.1. To correct the operation with stable frequency, you should adjust C(L) value.</p>
+<p>The C<sub>L</sub> is calculated by the following equation:</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612131955890.png" alt="" style="cursor:zoom-in;width:90%"></div>
+<p>The parasitic capacitance (C<sub>S</sub>) value is determined by the designed PCB pattern.</p>
+<p> </p>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="shunt-capacitance">Shunt Capacitance<a href="#shunt-capacitance" class="hash-link" aria-label="Direct link to Shunt Capacitance" title="Direct link to Shunt Capacitance">​</a></h3>
+<p>Shunt capacitance (C<sub>O</sub>) is the capacitance of non-resonant frequency.</p>
+<p>Figure 1.2 shows the crystal equivalent circuit.</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132124558.png" alt="" style="cursor:zoom-in;width:90%"></div>
+<p><strong>Figure 1.2 Crystal Equivalent Circuit</strong></p>
+<p> </p>
+<p> </p>
+<h1>Crystal Parameter in TCC805x</h1>
+<p>This chapter describes the features of in crystal parts in TCC805x.</p>
+<p> </p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="main-clock">Main Clock<a href="#main-clock" class="hash-link" aria-label="Direct link to Main Clock" title="Direct link to Main Clock">​</a></h2>
+<p>Most clocks used in TCC805x are generated from the main clockthat consists of crystal oscillator. The main clock is defined as the basic clock to operate each system block by using the clocks. (Example, PCIe and USB)</p>
+<p>Table 2.1 describes the recommended crystal model and values of external components for main clock.</p>
+<p> </p>
+<p><strong>Table 2.1 Crystal Model and Values of External Components for Main Clock</strong> </p>
+<table><thead><tr><th style="text-align:center"><strong>Parameter</strong></th><th style="text-align:center"><strong>Symbol</strong></th><th style="text-align:center"><strong>Minimum</strong></th><th style="text-align:center"><strong>Typical</strong></th><th style="text-align:center"><strong>Maximum</strong></th><th style="text-align:center"><strong>Unit</strong></th></tr></thead><tbody><tr><td style="text-align:center">Frequency</td><td style="text-align:center">f<sub>O</sub></td><td style="text-align:center">-</td><td style="text-align:center">24</td><td style="text-align:center">-</td><td style="text-align:center">MHz</td></tr><tr><td style="text-align:center">Equivalent Series Resistance (ESR)</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">60</td><td style="text-align:center">Ω</td></tr><tr><td style="text-align:center">Load Capacitance</td><td style="text-align:center">C<sub>L</sub></td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">12</td><td style="text-align:center">pF</td></tr><tr><td style="text-align:center">Shunt Capacitance</td><td style="text-align:center">C<sub>O</sub></td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">7</td><td style="text-align:center">pF</td></tr><tr><td style="text-align:center">Drive Level (DL)</td><td style="text-align:center">DL</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">100</td><td style="text-align:center">µW</td></tr><tr><td style="text-align:center">Feedback Resistor</td><td style="text-align:center">R<sub>F</sub></td><td style="text-align:center">-</td><td style="text-align:center">500</td><td style="text-align:center">-</td><td style="text-align:center">kΩ</td></tr><tr><td style="text-align:center">Series Resistor</td><td style="text-align:center">R<sub>S</sub></td><td style="text-align:center">0</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">Ω</td></tr></tbody></table>
+<p> </p>
+<p>Figure 2.1 shows the main clock circuit of TCC805x.</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132213252.png" alt="" style="cursor:zoom-in;width:30%"></div>
+<p><strong>Figure 2.1 Main Clock Circuit of TCC805x</strong></p>
+<p> </p>
+<p>You should tune the external component with crystal oscillator for stable system because the values of C<sub>L1</sub>), C<sub>L2</sub>), and R<sub>S</sub>) depend on the condition of using the crystal.</p>
+<p>The reference schematic of the main clock is designed with 24 MHz crystal oscillator as shown in Figure 2.2 and Figure 2.3.</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132423914.png" alt="" style="cursor:zoom-in;width:90%"></div>
+<p><strong>Figure 2.2 TCC8050_53 EVB Crystal Part Schematic (Main Clock)</strong></p>
+<p> </p>
+<p> </p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132445935.png" alt="" style="cursor:zoom-in;width:90%"></div>
+<p><strong>Figure 2.3 Schematic of Crystal Part of TCC8059 EVB (Main Clock)</strong></p>
+<p> </p>
+<p><strong>Note:</strong> The value of external components in the reference schematic is tuned by crystal vendor.</p>
+<p> </p>
+<p> </p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rtc-clock">RTC Clock<a href="#rtc-clock" class="hash-link" aria-label="Direct link to RTC Clock" title="Direct link to RTC Clock">​</a></h2>
+<p>The Real Time Clock (RTC) can operate by the backup battery if the system power is turned off. The RTC provides time-keeping data to CPU as Binary Coded Decimal (BCD) values. The data includes second, minute, hour, date, day of the week, month, and year. The RTC can also perform the alarm function.</p>
+<p>Table 2.2 describes the recommended crystal model and values of external components for RTC clock.</p>
+<p><strong>Table 2.2 Crystal Model and Values of External Components for RTC Clock</strong></p>
+<table><thead><tr><th style="text-align:center"><strong>Parameter</strong></th><th style="text-align:center"><strong>Symbol</strong></th><th style="text-align:center"><strong>Minimum</strong></th><th style="text-align:center"><strong>Typical</strong></th><th style="text-align:center"><strong>Maximum</strong></th><th style="text-align:center"><strong>Unit</strong></th></tr></thead><tbody><tr><td style="text-align:center">Frequency</td><td style="text-align:center">f<sub>O</sub></td><td style="text-align:center">-</td><td style="text-align:center">32.768</td><td style="text-align:center">-</td><td style="text-align:center">kHz</td></tr><tr><td style="text-align:center">Equivalent Series Resistance (ESR)</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">70</td><td style="text-align:center">kΩ</td></tr><tr><td style="text-align:center">Load Capacitance</td><td style="text-align:center">C<sub>L</sub></td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">12.5</td><td style="text-align:center">pF</td></tr><tr><td style="text-align:center">Shunt Capacitance</td><td style="text-align:center">C<sub>O</sub></td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">1.4</td><td style="text-align:center">pF</td></tr><tr><td style="text-align:center">Drive Level</td><td style="text-align:center">DL</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">1</td><td style="text-align:center">µW</td></tr><tr><td style="text-align:center">Feedback Resistor</td><td style="text-align:center">R<sub>F</sub></td><td style="text-align:center">-</td><td style="text-align:center">4.7</td><td style="text-align:center">-</td><td style="text-align:center">MΩ</td></tr><tr><td style="text-align:center">Series Resistor</td><td style="text-align:center">R<sub>S</sub></td><td style="text-align:center">0</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">MΩ</td></tr></tbody></table>
+<p>Figure 2.4 shows the RTC clock circuit of TCC805x.</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132544932.png" alt="" style="cursor:zoom-in;width:30%"></div>
+<p><strong>Figure 2.4 RTC Clock Circuit of TCC805x</strong></p>
+<p> </p>
+<p>You should tune the external component with crystal oscillator for stable system because the values of C_<sub>L1</sub>), C<sub>L2</sub>), and R<sub>S</sub>) depend on the condition of using the crystal.</p>
+<p>The reference schematic of RTC clock is designed with 32768 Hz crystal oscillator as shown in Figure 2.5 and Figure 2.6.</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132632886.png" alt="" style="cursor:zoom-in;width:90%"></div>
+<p>Figure 2.5 TCC8050_53 EVB Crystal Part Schematic (RTC Clock)</p>
+<p> </p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132642810.png" alt="" style="cursor:zoom-in;width:90%"></div>
+<p><strong>Figure 2.6 TCC8059 EVB Crystal Part Schematic (RTC Clock)</strong></p>
+<p> </p>
+<p><strong>Note:</strong> The value of external components in the reference schematic is tuned by crystal vendor.</p>
+<p> </p>
+<p> </p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="dp-clock-optional">DP Clock (Optional)<a href="#dp-clock-optional" class="hash-link" aria-label="Direct link to DP Clock (Optional)" title="Direct link to DP Clock (Optional)">​</a></h2>
+<p>TCC805x consists of DP PHY. The DisplayPort (DP) supports the next generation video display interface technology. The Video Electronics Standards Association (VESA) defines the DP standard as an open digital communications interface for use in internal as well as external connections. TCC805x is compliant to the DP specification V1.4. The DP complies with both High-bandwidth Digital Content Protection (HDCP) 1.3 and HDCP 2.2 standards. For details on the DP, refer to “<em>TCC805x Full Specification</em>” [2].</p>
+<p>TCC805x supports the following two options for DP clock source: dedicated external crystal and sharing main clock.</p>
+<p>TCC805x EVB is designed to use the main clock for DP clock source.</p>
+<p>If you want to design the circuit with an external crystal oscillator, you should design the crystal circuit as described in Table 2.3.</p>
+<p>Table 2.3 describes the recommended crystal model and values of external components for DP clock.</p>
+<p><strong>Table 2.3 Crystal Model and Values of External Components for DP Clock</strong></p>
+<table><thead><tr><th style="text-align:center"><strong>Parameter</strong></th><th style="text-align:center"><strong>Symbol</strong></th><th style="text-align:center"><strong>Minimum</strong></th><th style="text-align:center"><strong>Typical</strong></th><th style="text-align:center"><strong>Maximum</strong></th><th style="text-align:center"><strong>Unit</strong></th></tr></thead><tbody><tr><td style="text-align:center">Frequency</td><td style="text-align:center">f<sub>O</sub></td><td style="text-align:center">-</td><td style="text-align:center">24</td><td style="text-align:center">-</td><td style="text-align:center">MHz</td></tr><tr><td style="text-align:center">Equivalent Series Resistance (ESR)</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">60</td><td style="text-align:center">Ω</td></tr><tr><td style="text-align:center">Load Capacitance</td><td style="text-align:center">C<sub>L</sub></td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">12</td><td style="text-align:center">pF</td></tr><tr><td style="text-align:center">Shunt Capacitance</td><td style="text-align:center">C<sub>O</sub></td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">7</td><td style="text-align:center">pF</td></tr><tr><td style="text-align:center">Drive Level (DL)</td><td style="text-align:center">DL</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">100</td><td style="text-align:center">µW</td></tr><tr><td style="text-align:center">Feedback Resistor</td><td style="text-align:center">R<sub>F</sub></td><td style="text-align:center">-</td><td style="text-align:center">500</td><td style="text-align:center">-</td><td style="text-align:center">kΩ</td></tr><tr><td style="text-align:center">Series Resistor</td><td style="text-align:center">R<sub>S</sub></td><td style="text-align:center">0</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">Ω</td></tr></tbody></table>
+<p> </p>
+<p>Figure 2.7 shows the DP clock circuit of TCC8050/TCC8053.</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132743673.png" alt="" style="cursor:zoom-in;width:30%"></div>
+<p><strong>Figure 2.7 DP Clock Circuit of TCC8050/TCC8053</strong></p>
+<p> </p>
+<p>If you want to design the circuit with an external crystal oscillator, you should tune the external component with crystal oscillator for stable system because the values of C<sub>L1</sub>, C<sub>L2</sub>, and R<sub>S</sub> depend on the condition of using the crystal.</p>
+<p> </p>
+<p><strong>Note:</strong> Even if any option for DP clock is used, the designed circuit should be verified by the crystal vendor.</p>
+<p> </p>
+<p>The reference schematic of external DP clock is designed with 24 MHz crystal oscillator as shown in Figure 2.8.</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132848287.png" alt="" style="cursor:zoom-in;width:90%"></div>
+<p><strong>Figure 2.8 TCC8050_53 EVB Crystal Part Schematic (DP Clock)</strong></p>
+<p> </p>
+<p><strong>Note:</strong> The value of external components in the reference schematic is tuned by crystal vendor.</p>
+<p> </p>
+<p> </p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ufs-clock-optional">UFS Clock (Optional)<a href="#ufs-clock-optional" class="hash-link" aria-label="Direct link to UFS Clock (Optional)" title="Direct link to UFS Clock (Optional)">​</a></h2>
+<p>Each TCC8050 and TCC8053 has an UFS controller compliant to UFS2.1, UFS HCI 2.1, and UniPro. For UFS clock source, TCC8050 and TCC8053 support the following two options for UFS clock source: dedicated external crystal and sharing main clock.</p>
+<p>TCC8050_53 EVB is designed to use the main clock for UFS clock source.</p>
+<p>If you want to design the circuit with an external crystal oscillator, you should design the crystal circuit as described in Table 2.4.</p>
+<p>Table 2.4 describes the recommended crystal model and values of external components for UFS clock.</p>
+<p><strong>Table 2.4 Crystal Model and Values of External Components for UFS Clock</strong></p>
+<table><thead><tr><th style="text-align:center"><strong>Parameter</strong></th><th style="text-align:center"><strong>Symbol</strong></th><th style="text-align:center"><strong>Minimum</strong></th><th style="text-align:center"><strong>Typical</strong></th><th style="text-align:center"><strong>Maximum</strong></th><th style="text-align:center"><strong>Unit</strong></th></tr></thead><tbody><tr><td style="text-align:center">Frequency</td><td style="text-align:center">f<sub>O</sub></td><td style="text-align:center">-</td><td style="text-align:center">26</td><td style="text-align:center">-</td><td style="text-align:center">MHz</td></tr><tr><td style="text-align:center">Equivalent Series Resistance (ESR)</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">60</td><td style="text-align:center">Ω</td></tr><tr><td style="text-align:center">Load Capacitance</td><td style="text-align:center">C<sub>L</sub></td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">12</td><td style="text-align:center">pF</td></tr><tr><td style="text-align:center">Shunt Capacitance</td><td style="text-align:center">C<sub>O</sub></td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">7</td><td style="text-align:center">pF</td></tr><tr><td style="text-align:center">Drive Level</td><td style="text-align:center">DL</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">100</td><td style="text-align:center">µW</td></tr><tr><td style="text-align:center">Feedback Resistor</td><td style="text-align:center">R<sub>F</sub></td><td style="text-align:center">-</td><td style="text-align:center">500</td><td style="text-align:center">-</td><td style="text-align:center">kΩ</td></tr><tr><td style="text-align:center">Series Resistor</td><td style="text-align:center">R<sub>S</sub></td><td style="text-align:center">0</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">Ω</td></tr></tbody></table>
+<p> </p>
+<p>Figure 2.9 shows the UFS clock circuit of TCC8050/TCC8053.</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132940881.png" alt="" style="cursor:zoom-in;width:30%"></div>
+<p><strong>Figure 2.9 UFS Clock Circuit of TCC8050/TCC8053</strong></p>
+<p> </p>
+<p>If you want to design the circuit with external crystal oscillator, you should tune the external component with crystal oscillator for stable system because the values of C<sub>L1</sub>, C<sub>L2</sub>, and R<sub>S</sub> depend on the condition of using the crystal.</p>
+<p> </p>
+<p><strong>Note:</strong> Even if any option for UFS clock is used, the designed circuit should be verified by the crystal vendor.</p>
+<p> </p>
+<p>The reference schematic of external UFS clock is designed with 26 MHz crystal oscillator as shown in Figure 2.10.</p>
+<div style="text-align:center"><img src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612133004260.png" alt="" style="cursor:zoom-in;width:90%"></div>
+<p><strong>Figure 2.10 TCC8050_53 EVB Crystal Part Schematic (UFS Clock)</strong></p>
+<p> </p>
+<p><strong>Note:</strong> The value of external components in the reference schematic is tuned by crystal vendor.</p>
+<p> </p>
+<p> </p>
+<h1>How to design Crystal circuit</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-design-crystal-circuit-1">How to design Crystal Circuit<a href="#how-to-design-crystal-circuit-1" class="hash-link" aria-label="Direct link to How to design Crystal Circuit" title="Direct link to How to design Crystal Circuit">​</a></h2>
+<p>This chapter describes how to design the crystal circuit and PCB layout, and the tuning result of TCC805x EVB.</p>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pcb-layout">PCB Layout<a href="#pcb-layout" class="hash-link" aria-label="Direct link to PCB Layout" title="Direct link to PCB Layout">​</a></h3>
+<p>During PCB layout, consider and check the followings:</p>
+<ul>
+<li>
+<p>XIN/XTIN and XOUT/XTOUT traces do not overlap.</p>
+</li>
+<li>
+<p>Crystal and load capacitor ground must consist of a single ground for low impedance.</p>
+</li>
+<li>
+<p>Crystal traces and ground should be isolated from noisy signals to avoid coupling.</p>
+</li>
+<li>
+<p>Crystal ground plane should be connected to the reference ground through VIA.</p>
+</li>
+<li>
+<p>Crystal circuit related components and traces are located as close as possible.</p>
+</li>
+</ul>
+<p> </p>
+<p>To find the optimum performance of the designed board, you should request a test report of crystal resonant frequency to the crystal vendors. The crystal vendors will provide the optimum value of external components on the designed board.</p>
+<p>In most cases, crystal vendors provide the test report as described in Table 3.1.</p>
+<p><strong> </strong></p>
+<p><strong>Table 3.1 Example: Crystal Test Report</strong></p>
+<table><thead><tr><th style="text-align:center"><strong>DL (µW)</strong></th><th style="text-align:center"><strong>Negative Resistance (Ω)</strong></th><th style="text-align:center"><strong>Frequency Tolerance (ppm)</strong></th></tr></thead><tbody><tr><td style="text-align:center">30</td><td style="text-align:center">400</td><td style="text-align:center">-1.05</td></tr></tbody></table>
+<p> </p>
+<p>Table 3.1 is an example of test report and you should check the following lists.</p>
+<ul>
+<li>
+<p><strong>Negative Resistance</strong></p>
+<ul>
+<li>If the value of negative resistance gets higher, the stability improves, but EMI performance decreases.</li>
+</ul>
+</li>
+<li>
+<p><strong>Frequency Tolerance</strong></p>
+<ul>
+<li>
+<p>In general, the frequency tolerance is an important parameter of the clock specification for the fast and sensitive system block.</p>
+</li>
+<li>
+<p>Beacuse the clock used in TCC805x is based on the main clock and RTC clock, minimizing the crystal deviation can reduce an error of each system clock and provide a more stable system.</p>
+</li>
+</ul>
+<p> </p>
+<p> </p>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tuning-information-of-tcc805x-evb">Tuning Information of TCC805x EVB<a href="#tuning-information-of-tcc805x-evb" class="hash-link" aria-label="Direct link to Tuning Information of TCC805x EVB" title="Direct link to Tuning Information of TCC805x EVB">​</a></h2>
+<p>The crystal tuning is performed on TCC805x EVB to determine external values. This chapter describes the design information for TCC805x EVB.</p>
+<ul>
+<li>
+<p>Test Board 1: TCC8059_CPU_LPD4321_SV0.1</p>
+</li>
+<li>
+<p>Test Board 2: TCC8050_53_CPU_LPD4321_SV0.1</p>
+</li>
+<li>
+<p>Crystal Information: Refer to Table 3.2.</p>
+</li>
+</ul>
+<p> </p>
+<p><strong>Table 3.2 Crystal Specification for TCC8059 EVB</strong></p>
+<table><thead><tr><th><strong>Item</strong></th><th><strong>Main Clock</strong></th><th><strong>RTC Clock</strong></th><th><strong>Unit</strong></th></tr></thead><tbody><tr><td>Part Number</td><td>E3SB24E008100A</td><td>ETST003278100A</td><td>-</td></tr><tr><td>Frequency</td><td>24 MHz</td><td>32.768 kHz</td><td>-</td></tr><tr><td>Load Capacitance</td><td>12</td><td>12.5</td><td>pF</td></tr><tr><td>Frequency Tolerance</td><td>±10</td><td>±20</td><td>ppm (@ 25 °C ± 3 °C)</td></tr><tr><td>Maximum ESR</td><td>60</td><td>70K</td><td>Ω</td></tr><tr><td>Drive Level (DL)</td><td>100</td><td>-</td><td>µW</td></tr><tr><td>Mode of Vibration</td><td>Fundamental</td><td>Fundamental</td><td>-</td></tr></tbody></table>
+<p> </p>
+<p><strong>Table 3.3 Crystal Specification for TCC8050_53 EVB</strong></p>
+<table><thead><tr><th><strong>Item</strong></th><th><strong>Main Clock</strong></th><th><strong>RTC Clock</strong></th><th><strong>DP Clock</strong></th><th><strong>UFS Clock</strong></th><th><strong>Unit</strong></th></tr></thead><tbody><tr><td>Part Number</td><td>E3SB24E008100A</td><td>ETST003278100A</td><td>E3SB24E008100A</td><td>E3SB26E000011E</td><td>-</td></tr><tr><td>Frequency</td><td>24 MHz</td><td>32.768 kHz</td><td>24 MHz</td><td>26 MHz</td><td>-</td></tr><tr><td>Load Capacitance</td><td>12</td><td>12.5</td><td>12</td><td>12</td><td>pF</td></tr><tr><td>Frequency Tolerance</td><td>±10</td><td>±20</td><td>±10</td><td>±10</td><td>ppm (@ 25 °C ± 3 °C)</td></tr><tr><td>Maximum ESR</td><td>60</td><td>70K</td><td>60</td><td>50</td><td>Ω</td></tr><tr><td>Drive Level (DL)</td><td>100</td><td>-</td><td>100</td><td>200</td><td>µW</td></tr><tr><td>Mode of Vibration</td><td>Fundamental</td><td>Fundamental</td><td>Fundamental</td><td>Fundamental</td><td>-</td></tr></tbody></table>
+<p> </p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="test-report-of-crystal-vendor">Test Report of Crystal Vendor<a href="#test-report-of-crystal-vendor" class="hash-link" aria-label="Direct link to Test Report of Crystal Vendor" title="Direct link to Test Report of Crystal Vendor">​</a></h3>
+<p>Table 3.4 and Table 3.5 describe test reports provided by the crystal vendor for TCC805x EVB.</p>
+<p> </p>
+<p><strong>Table 3.4 Test Report of TCC8059 EVB</strong></p>
+<table><thead><tr><th><strong>Item</strong></th><th><strong>Unit</strong></th><th><strong>Main Clock</strong></th><th><strong>RTC Clock</strong></th></tr></thead><tbody><tr><td>C<sub>L1</sub></td><td>pF</td><td>16 (C22)</td><td>20 (C21)</td></tr><tr><td>C<sub>L2</sub></td><td>pF</td><td>16 (C23)</td><td>20 (C24)</td></tr><tr><td>R<sub>F</sub></td><td>Ω</td><td>499K (R57)</td><td>4.7M (R58)</td></tr><tr><td>R<sub>S</sub></td><td>Ω</td><td>0 (R59)</td><td>0 (R60)</td></tr><tr><td>Negative Resistance</td><td>Ω</td><td>350</td><td>220K</td></tr><tr><td>DL</td><td>µW</td><td>19.92</td><td>-</td></tr><tr><td>Output Frequency</td><td>ppm</td><td>-3.67</td><td>19</td></tr><tr><td></td><td>MHz</td><td>23.999912</td><td>0.032768623</td></tr><tr><td>Frequency Shift of PCB Board</td><td>ppm</td><td>-5.97</td><td>6.71</td></tr></tbody></table>
+<p> </p>
+<p><strong>Table 3.5 Test Report of TCC8050_53 EVB</strong></p>
+<table><thead><tr><th><strong>Item</strong></th><th><strong>Unit</strong></th><th><strong>Main Clock</strong></th><th><strong>RTC Clock</strong></th><th><strong>DP Clock</strong></th><th><strong>UFS Clock</strong></th></tr></thead><tbody><tr><td>C<sub>L1</sub></td><td>pF</td><td>12 (C45)</td><td>20 (C33)</td><td>16 (C20)</td><td>12 (C22)</td></tr><tr><td>C<sub>L2</sub></td><td>pF</td><td>15 (C48)</td><td>20 (C34)</td><td>16 (C21)</td><td>12 (C23)</td></tr><tr><td>R<sub>F</sub></td><td>Ω</td><td>499K (R58)</td><td>4.7M (R36)</td><td>499K (R30)</td><td>499K (R31)</td></tr><tr><td>R<sub>S</sub></td><td>Ω</td><td>0 (R59)</td><td>0 (R37)</td><td>0 (R320)</td><td>0 (R33)</td></tr><tr><td>Negative Resistance</td><td>Ω</td><td>380</td><td>230K</td><td>400</td><td>1100</td></tr><tr><td>DL</td><td>µW</td><td>21.95</td><td>-</td><td>24.52</td><td>52.10</td></tr><tr><td>Output Frequency</td><td>ppm</td><td>0.12</td><td>6.00</td><td>-6.54</td><td>-3.19</td></tr><tr><td></td><td>MHz</td><td>24.000003</td><td>0.032768197</td><td>23.999843</td><td>25.999917</td></tr><tr><td>Frequency Shift of PCB Board</td><td>ppm</td><td>-0.14</td><td>5.78</td><td>-4.89</td><td>-1.10</td></tr></tbody></table>
+<p> </p>
+<p><strong>Note:</strong> When designing the crystal circuit, you must request the tuning value of the crystal circuit from the crystal vendor as described in Table 3.4 and Table 3.5.</p>
+<p> </p>
+<p> </p>
+<h1>References</h1>
+<ol>
+<li>
+<p>Contact Telechips for more details: <a href="mailto:auto_sales@telechips.com" target="_blank" rel="noopener noreferrer">sales@telechips.com</a></p>
+</li>
+<li>
+<p>TCC805x Full Specification</p>
+</li>
+<li>
+<p>Reference Schematic of TCC805x</p>
+</li>
+</ol>
+<p> </p>
+<p><strong>Note:</strong> Reference documents can be provided whenever available, depending on the terms of a contract. If the reference documents are unavailable, the contents directly related to your development can be guided.</p>
+<p> </p>
+<p> </p>
+<h1>Revision History</h1>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rev-100-2024-08-09">Rev. 1.00: 2024-08-09<a href="#rev-100-2024-08-09" class="hash-link" aria-label="Direct link to Rev. 1.00: 2024-08-09" title="Direct link to Rev. 1.00: 2024-08-09">​</a></h2>
+<ul>
+<li>Changed<!-- -->
+<ul>
+<li>Title changed from “TCC805x <del>Common</del> Hardware-Application Note for Crystal Design”</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rev-002-2022-02-17">Rev. 0.02: 2022-02-17<a href="#rev-002-2022-02-17" class="hash-link" aria-label="Direct link to Rev. 0.02: 2022-02-17" title="Direct link to Rev. 0.02: 2022-02-17">​</a></h2>
+<ul>
+<li>
+<p>Updated</p>
+<ul>
+<li>
+<p>Chapter 1.2.2, Chapter 1.2.5: Description</p>
+</li>
+<li>
+<p>Chapter 2.1: Figure 2.2</p>
+</li>
+<li>
+<p>Chapter 2.4: Figure 2.10</p>
+</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rev-001-2020-08-26">Rev. 0.01: 2020-08-26<a href="#rev-001-2020-08-26" class="hash-link" aria-label="Direct link to Rev. 0.01: 2020-08-26" title="Direct link to Rev. 0.01: 2020-08-26">​</a></h2>
+<ul>
+<li>Preliminary version release</li>
+</ul>
+<p> </p>
+<p> </p>
+<p> </p>
+<hr>
+<p>DISCLAIMER</p>
+<p>This material is being made available solely for your internal use with its products and service offerings of Telechips, Inc (“Telechips”). and/or licensors and shall not be used for any other purposes. This material may not be altered, edited, or modified in any way without Telechips’ prior written approval. Unauthorized use or disclosure of this material or the information contained herein is strictly prohibited, and you agree to indemnify Telechips and licensors for any damages or losses suffered by Telechips and/or licensors for any unauthorized uses or disclosures of this material, in whole or part. Further, Telechips, Inc. reserves the right to revise this material and to make changes to its content, at any time, without obligation to notify any person or entity of such revisions or changes.</p>
+<p>THIS MATERIAL IS BEING PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESSED, IMPLIED, STATUTORY OR OTHERWISE. TO THE MAXIMUM EXTENT PERMITTED BY LAW, TELECHIPS AND/OR LICENSORS SPECIFICALLY DISCLAIM ALL WARRANTIES OF TITLE, MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, COMPLETENESS OR ACCURACY, AND ALL WARRANTIES ARISING OUT OF TRADE USAGE OR OUT OF A COURSE OF DEALING OR COURSE OF PERFORMANCE. MOREOVER, NEITHER TELECHIPS, INC. NOR LICENSORS, SHALL BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY EXPENSES, LOSSES, USE, OR ACTIONS HOWSOEVER INCURRED OR UNDERTAKEN BY YOU IN RELIANCE ON THIS MATERIAL.</p>
+<p>THIS MATERIAL IS DESIGNED FOR GENERAL PURPOSE, AND ACCORDINGLY YOU ARE RESPONSIBLE FOR ALL OR ANY OF INTELLECTUAL PROPERTY LICENSES REQUIRED FOR ACTUAL APPLICATION. TELECHIPS, INC. DOES NOT PROVIDE ANY INDEMNIFICATION FOR ANY INTELLECTUAL PROPERTIES OWNED BY THIRD PARTY.</p>
+<p>Copyright Statement</p>
+<p>Copyright in this material provided by Telechips, Inc. is owned by Telechips unless otherwise noted. For reproduction or use of Telechips’ copyright material, prior written consent should be obtained from Telechips. That prior written consent, if given, will be subject to conditions that Telechips’ name should be included and interest in the material should be acknowledged when the material is reproduced or quoted, either in whole or in part. You must not copy, adapt, publish, distribute, or commercialize any contents contained in the material in any manner without the written permission of Telechips. Trademarks used in Telechips’ copyright material are the property of Telechips.</p>
+<p><em><strong>For customers who use Google technology:</strong></em></p>
+<p> &quot;Copyright © 2013 Google Inc. All rights reserved.”</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/Ye-Eun-Kang/telechips-docs/edit/main/docs/TCC805x/HW/Application Note/Crystal Design.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/telechips-docs/docs/TCC805x/HW/Application Note/Choosing Pull-up and Pull-down Resistor at Input Port"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Choosing Pull-up and Pull-down Resistor at Input Port</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/telechips-docs/docs/TCC805x/HW/Application Note/TCC805x Hardware-Application Note for DVFS"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">TCC805x Hardware-Application Note for DVFS</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#basic-feature-of-crystal-oscillator" class="table-of-contents__link toc-highlight">Basic Feature of Crystal Oscillator</a><ul><li><a href="#basic-circuitry-of-crystal-oscillator" class="table-of-contents__link toc-highlight">Basic Circuitry of Crystal Oscillator</a></li></ul></li><li><a href="#parameters-of-crystal-specification" class="table-of-contents__link toc-highlight">Parameters of Crystal Specification</a><ul><li><a href="#frequency" class="table-of-contents__link toc-highlight">Frequency</a></li><li><a href="#frequency-tolerance" class="table-of-contents__link toc-highlight">Frequency Tolerance</a></li><li><a href="#frequency-stability" class="table-of-contents__link toc-highlight">Frequency Stability</a></li><li><a href="#drive-level" class="table-of-contents__link toc-highlight">Drive Level</a></li><li><a href="#equivalent-series-resistance" class="table-of-contents__link toc-highlight">Equivalent Series Resistance</a></li><li><a href="#load-capacitance" class="table-of-contents__link toc-highlight">Load Capacitance</a></li><li><a href="#shunt-capacitance" class="table-of-contents__link toc-highlight">Shunt Capacitance</a></li></ul></li><li><a href="#main-clock" class="table-of-contents__link toc-highlight">Main Clock</a></li><li><a href="#rtc-clock" class="table-of-contents__link toc-highlight">RTC Clock</a></li><li><a href="#dp-clock-optional" class="table-of-contents__link toc-highlight">DP Clock (Optional)</a></li><li><a href="#ufs-clock-optional" class="table-of-contents__link toc-highlight">UFS Clock (Optional)</a></li><li><a href="#how-to-design-crystal-circuit-1" class="table-of-contents__link toc-highlight">How to design Crystal Circuit</a><ul><li><a href="#pcb-layout" class="table-of-contents__link toc-highlight">PCB Layout</a></li></ul></li><li><a href="#tuning-information-of-tcc805x-evb" class="table-of-contents__link toc-highlight">Tuning Information of TCC805x EVB</a><ul><li><a href="#test-report-of-crystal-vendor" class="table-of-contents__link toc-highlight">Test Report of Crystal Vendor</a></li></ul></li><li><a href="#rev-100-2024-08-09" class="table-of-contents__link toc-highlight">Rev. 1.00: 2024-08-09</a></li><li><a href="#rev-002-2022-02-17" class="table-of-contents__link toc-highlight">Rev. 0.02: 2022-02-17</a></li><li><a href="#rev-001-2020-08-26" class="table-of-contents__link toc-highlight">Rev. 0.01: 2020-08-26</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
