@@ -1,3 +1,8 @@
+---
+title: Crystal Design
+sidebar_label: Crystal Design
+---
+
 import ZoomableImage from '@site/src/components/ZoomableImage';
 
 # Introduction
