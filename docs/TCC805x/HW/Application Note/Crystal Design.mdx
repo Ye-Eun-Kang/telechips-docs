@@ -1,0 +1,584 @@
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Introduction
+
+This document describes how to configure hardware by using crystal oscillator and TCC805x and provides design guide for optimum performance.
+
+&nbsp;
+
+## Basic Feature of Crystal Oscillator
+
+This chapter describes the basic feature of crystal oscillator.
+
+&nbsp;
+
+### Basic Circuitry of Crystal Oscillator
+
+Most of the Integrated Circuits (IC)s use an external crystal oscillator as a clock source.
+
+&nbsp;
+
+The features of typical crystal oscillator are as follows:
+
+- Cost effective
+
+- Low power consumption
+
+- Stability as parallel oscillator circuit
+
+&nbsp;
+
+Figure 1.1 shows the typical crystal oscillator circuit.
+
+​     <ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612131442006.png" width="30%" />          
+
+**Figure 1.1 Crystal Oscillator Circuit**
+
+&nbsp;
+
+Normally, each part in the circuit operates as follows:
+
+- Inverting Amplifier: Internal inverter as an amplifier
+
+- R<sub>F</sub>: Feedback resistor to bias the amplifier
+
+- R<sub>S</sub>: Series resistor to limit amplifier gain and reduce power dissipation in the crystal
+
+- C<sub>L1</sub>, C<sub>L2</sub>: Load capacitance of the crystal
+
+- C<sub>S</sub>: Parasitic capacitance (Refer to Chapter 1.2.6.)
+
+&nbsp;
+
+&nbsp;
+
+## Parameters of Crystal Specification
+
+To select an adaptive crystal for circuit design, you should find the appropriate parameters in the crystal datasheet. Crystal vendors support several parameters that are important to design the circuit for the optimum board performance.
+
+Table 1.1 describes normal parameters in the crystal datasheet.
+
+**Table 1.1 Crystal Parameter**
+
+|           **Parameter**            |    **Symbol**    |  **Unit**  | **Remark** |
+| :--------------------------------: | :--------------: | :--------: | :--------: |
+|             Frequency              |  f<sub>O</sub>   | kHz or MHz |  @ 25 °C   |
+|        Frequency Tolerance         | Δf/f<sub>O</sub> |    ppm     |            |
+|        Frequency Stability         | Δf/f<sub>O</sub> |    ppm     |            |
+|          Drive Level (DL)          |        DL        |     µW     |  Maximum   |
+| Equivalent Series Resistance (ESR) |        R1        |     Ω      |  @ 25 °C   |
+|          Load Capacitance          |  C<sub>O</sub>   |     pF     |            |
+|         Shunt Capacitance          |  C<sub>O</sub>   |     pF     |            |
+
+&nbsp;
+
+### Frequency
+
+Normally, f<sub>O</sub> indicates the operating frequency of the crystal.
+
+&nbsp;
+
+### Frequency Tolerance
+
+Frequency tolerance (Δf/f<sub>O</sub>) is a frequency deviation, which is a factor that indicates the accuracy of the crystal clock at 25 °C.
+
+And it measures how close the crystal clock is to the desired frequency.
+
+The frequency tolerance factor is usually defined in parts per million (ppm).
+
+&nbsp;
+
+&nbsp;
+
+### Frequency Stability
+
+Frequency stability defines the frequency deviation over the given operating temperature range.
+
+The frequency stability factor is usually defined in parts per million (ppm).
+
+&nbsp;
+
+&nbsp;
+
+### Drive Level
+
+Drive Level DL indicates the maximum amount of the crystal that can be consumed while maintaining the specified performance.
+
+DL is a measurement of the power applied to the resonator by inverting the amplifier in the External Crystal Oscillator (ECO) circuit.
+
+A high DL causes damage such as reducing the life-cycle in your system. Therefore, you should select the crystal oscillator to meet the DL specification.
+
+Usually, crystal vendors specify the maximum DL that may be applied to their crystal oscillator in the datasheet.
+
+&nbsp;
+
+&nbsp;
+
+### Equivalent Series Resistance
+
+Equivalent Series Resistance (ESR) indicates the resistive value of the crystal equivalent circuit with the resonating frequency.
+
+If you design the system with low ESR crystal, the crystal can be damaged at high DL. If you design the system with high ESR crystal, the system can be unstable.
+
+The ESR is typically specified as a maximum resistance value.
+
+&nbsp;
+
+&nbsp;
+
+### Load Capacitance
+
+Load capacitance (C<sub>L</sub>) is the total capacitance of C<sub>L1</sub> and C<sub>L2</sub> in Figure 1.1. To correct the operation with stable frequency, you should adjust C(L) value.
+
+The C<sub>L</sub> is calculated by the following equation:
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612131955890.png" width="90%" />
+
+The parasitic capacitance (C<sub>S</sub>) value is determined by the designed PCB pattern.
+
+&nbsp;
+
+&nbsp;
+
+### Shunt Capacitance
+
+Shunt capacitance (C<sub>O</sub>) is the capacitance of non-resonant frequency.
+
+Figure 1.2 shows the crystal equivalent circuit.
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132124558.png" width="90%" />
+
+**Figure 1.2 Crystal Equivalent Circuit**
+
+&nbsp;
+
+&nbsp;
+
+# Crystal Parameter in TCC805x
+
+This chapter describes the features of in crystal parts in TCC805x.
+
+&nbsp;
+
+## Main Clock
+
+Most clocks used in TCC805x are generated from the main clockthat consists of crystal oscillator. The main clock is defined as the basic clock to operate each system block by using the clocks. (Example, PCIe and USB)
+
+Table 2.1 describes the recommended crystal model and values of external components for main clock.
+
+&nbsp;
+
+**Table 2.1 Crystal Model and Values of External Components for Main Clock**&nbsp;
+
+| **Parameter** | **Symbol** | **Minimum** | **Typical** | **Maximum** | **Unit** |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| Frequency | f<sub>O</sub> | \- | 24 | \- | MHz |
+| Equivalent Series Resistance (ESR) | \- | \- | \- | 60 | Ω |
+| Load Capacitance | C<sub>L</sub> | \- | \- | 12 | pF |
+| Shunt Capacitance | C<sub>O</sub> | \- | \- | 7 | pF |
+| Drive Level (DL) | DL | \- | \- | 100 | µW |
+| Feedback Resistor | R<sub>F</sub> | \- | 500 | \- | kΩ |
+| Series Resistor | R<sub>S</sub> | 0 | \- | \- | Ω |
+
+&nbsp;
+
+Figure 2.1 shows the main clock circuit of TCC805x.
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132213252.png" width="30%" />
+
+**Figure 2.1 Main Clock Circuit of TCC805x**
+
+&nbsp;
+
+You should tune the external component with crystal oscillator for stable system because the values of C<sub>L1</sub>), C<sub>L2</sub>), and R<sub>S</sub>) depend on the condition of using the crystal.
+
+The reference schematic of the main clock is designed with 24 MHz crystal oscillator as shown in Figure 2.2 and Figure 2.3.
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132423914.png" width="90%" />
+
+**Figure 2.2 TCC8050_53 EVB Crystal Part Schematic (Main Clock)**
+
+&nbsp;
+
+&nbsp;
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132445935.png" width="90%" />
+
+**Figure 2.3 Schematic of Crystal Part of TCC8059 EVB (Main Clock)**
+
+&nbsp;
+
+**Note:** The value of external components in the reference schematic is tuned by crystal vendor.
+
+&nbsp;
+
+
+
+&nbsp;
+
+## RTC Clock
+
+The Real Time Clock (RTC) can operate by the backup battery if the system power is turned off. The RTC provides time-keeping data to CPU as Binary Coded Decimal (BCD) values. The data includes second, minute, hour, date, day of the week, month, and year. The RTC can also perform the alarm function.
+
+Table 2.2 describes the recommended crystal model and values of external components for RTC clock.
+
+**Table 2.2 Crystal Model and Values of External Components for RTC Clock**
+
+| **Parameter** | **Symbol** | **Minimum** | **Typical** | **Maximum** | **Unit** |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| Frequency | f<sub>O</sub> | \- | 32.768 | \- | kHz |
+| Equivalent Series Resistance (ESR) | \- | \- | \- | 70 | kΩ |
+| Load Capacitance | C<sub>L</sub> | \- | \- | 12.5 | pF |
+| Shunt Capacitance | C<sub>O</sub> | \- | \- | 1.4 | pF |
+| Drive Level | DL | \- | \- | 1 | µW |
+| Feedback Resistor | R<sub>F</sub> | \- | 4.7 | \- | MΩ |
+| Series Resistor | R<sub>S</sub> | 0 | \- | \- | MΩ |
+
+
+
+Figure 2.4 shows the RTC clock circuit of TCC805x.
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132544932.png" width="30%" />
+
+**Figure 2.4 RTC Clock Circuit of TCC805x**
+
+&nbsp;
+
+You should tune the external component with crystal oscillator for stable system because the values of C_<sub>L1</sub>), C<sub>L2</sub>), and R<sub>S</sub>) depend on the condition of using the crystal.
+
+The reference schematic of RTC clock is designed with 32768 Hz crystal oscillator as shown in Figure 2.5 and Figure 2.6.
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132632886.png" width="90%" />
+
+Figure 2.5 TCC8050_53 EVB Crystal Part Schematic (RTC Clock)
+
+&nbsp;
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132642810.png" width="90%" />
+
+**Figure 2.6 TCC8059 EVB Crystal Part Schematic (RTC Clock)**
+
+&nbsp;
+
+**Note:** The value of external components in the reference schematic is tuned by crystal vendor.
+
+&nbsp;
+
+&nbsp;
+
+## DP Clock (Optional)
+
+TCC805x consists of DP PHY. The DisplayPort (DP) supports the next generation video display interface technology. The Video Electronics Standards Association (VESA) defines the DP standard as an open digital communications interface for use in internal as well as external connections. TCC805x is compliant to the DP specification V1.4. The DP complies with both High-bandwidth Digital Content Protection (HDCP) 1.3 and HDCP 2.2 standards. For details on the DP, refer to “*TCC805x Full Specification*” \[2\].
+
+TCC805x supports the following two options for DP clock source: dedicated external crystal and sharing main clock.
+
+TCC805x EVB is designed to use the main clock for DP clock source.
+
+If you want to design the circuit with an external crystal oscillator, you should design the crystal circuit as described in Table 2.3.
+
+Table 2.3 describes the recommended crystal model and values of external components for DP clock.
+
+**Table 2.3 Crystal Model and Values of External Components for DP Clock**
+
+| **Parameter** | **Symbol** | **Minimum** | **Typical** | **Maximum** | **Unit** |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| Frequency | f<sub>O</sub> | \- | 24 | \- | MHz |
+| Equivalent Series Resistance (ESR) | \- | \- | \- | 60 | Ω |
+| Load Capacitance | C<sub>L</sub> | \- | \- | 12 | pF |
+| Shunt Capacitance | C<sub>O</sub> | \- | \- | 7 | pF |
+| Drive Level (DL) | DL | \- | \- | 100 | µW |
+| Feedback Resistor | R<sub>F</sub> | \- | 500 | \- | kΩ |
+| Series Resistor | R<sub>S</sub> | 0 | \- | \- | Ω |
+
+&nbsp;
+
+Figure 2.7 shows the DP clock circuit of TCC8050/TCC8053.
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132743673.png" width="30%" />
+
+**Figure 2.7 DP Clock Circuit of TCC8050/TCC8053**
+
+&nbsp;
+
+If you want to design the circuit with an external crystal oscillator, you should tune the external component with crystal oscillator for stable system because the values of C<sub>L1</sub>, C<sub>L2</sub>, and R<sub>S</sub> depend on the condition of using the crystal.
+
+&nbsp;
+
+**Note:** Even if any option for DP clock is used, the designed circuit should be verified by the crystal vendor.
+
+&nbsp;
+
+The reference schematic of external DP clock is designed with 24 MHz crystal oscillator as shown in Figure 2.8.
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132848287.png" width="90%" />
+
+**Figure 2.8 TCC8050_53 EVB Crystal Part Schematic (DP Clock)**
+
+&nbsp;
+
+**Note:** The value of external components in the reference schematic is tuned by crystal vendor.
+
+&nbsp;
+
+&nbsp;
+
+## UFS Clock (Optional)
+
+Each TCC8050 and TCC8053 has an UFS controller compliant to UFS2.1, UFS HCI 2.1, and UniPro. For UFS clock source, TCC8050 and TCC8053 support the following two options for UFS clock source: dedicated external crystal and sharing main clock.
+
+TCC8050_53 EVB is designed to use the main clock for UFS clock source.
+
+If you want to design the circuit with an external crystal oscillator, you should design the crystal circuit as described in Table 2.4.
+
+Table 2.4 describes the recommended crystal model and values of external components for UFS clock.
+
+**Table 2.4 Crystal Model and Values of External Components for UFS Clock**
+
+| **Parameter** | **Symbol** | **Minimum** | **Typical** | **Maximum** | **Unit** |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| Frequency | f<sub>O</sub> | \- | 26 | \- | MHz |
+| Equivalent Series Resistance (ESR) | \- | \- | \- | 60 | Ω |
+| Load Capacitance | C<sub>L</sub> | \- | \- | 12 | pF |
+| Shunt Capacitance | C<sub>O</sub> | \- | \- | 7 | pF |
+| Drive Level | DL | \- | \- | 100 | µW |
+| Feedback Resistor | R<sub>F</sub> | \- | 500 | \- | kΩ |
+| Series Resistor | R<sub>S</sub> | 0 | \- | \- | Ω |
+
+&nbsp;
+
+Figure 2.9 shows the UFS clock circuit of TCC8050/TCC8053.
+
+  <ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612132940881.png" width="30%" />                                 
+
+**Figure 2.9 UFS Clock Circuit of TCC8050/TCC8053**
+
+&nbsp;
+
+If you want to design the circuit with external crystal oscillator, you should tune the external component with crystal oscillator for stable system because the values of C<sub>L1</sub>, C<sub>L2</sub>, and R<sub>S</sub> depend on the condition of using the crystal.
+
+&nbsp;
+
+**Note:** Even if any option for UFS clock is used, the designed circuit should be verified by the crystal vendor.
+
+&nbsp;
+
+The reference schematic of external UFS clock is designed with 26 MHz crystal oscillator as shown in Figure 2.10.
+
+<ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC805x/HW/Application%20Note/Crystal%20Design/image-20250612133004260.png" width="90%" />
+
+**Figure 2.10 TCC8050_53 EVB Crystal Part Schematic (UFS Clock)**
+
+&nbsp;
+
+**Note:** The value of external components in the reference schematic is tuned by crystal vendor.
+
+&nbsp;
+
+&nbsp;
+
+# How to design Crystal circuit 
+
+## How to design Crystal Circuit
+
+This chapter describes how to design the crystal circuit and PCB layout, and the tuning result of TCC805x EVB.
+
+&nbsp;
+
+### PCB Layout
+
+During PCB layout, consider and check the followings:
+
+- XIN/XTIN and XOUT/XTOUT traces do not overlap.
+
+- Crystal and load capacitor ground must consist of a single ground for low impedance.
+
+- Crystal traces and ground should be isolated from noisy signals to avoid coupling.
+
+- Crystal ground plane should be connected to the reference ground through VIA.
+
+- Crystal circuit related components and traces are located as close as possible.
+
+&nbsp;
+
+To find the optimum performance of the designed board, you should request a test report of crystal resonant frequency to the crystal vendors. The crystal vendors will provide the optimum value of external components on the designed board.
+
+In most cases, crystal vendors provide the test report as described in Table 3.1.
+
+**&nbsp;**
+
+**Table 3.1 Example: Crystal Test Report**
+
+| **DL (µW)** | **Negative Resistance (Ω)** | **Frequency Tolerance (ppm)** |
+|:-----------:|:---------------------------:|:-----------------------------:|
+|     30      |             400             |             -1.05             |
+
+&nbsp;
+
+Table 3.1 is an example of test report and you should check the following lists.
+
+- **Negative Resistance**
+
+  - If the value of negative resistance gets higher, the stability improves, but EMI performance decreases.
+
+- **Frequency Tolerance**
+
+  - In general, the frequency tolerance is an important parameter of the clock specification for the fast and sensitive system block.
+
+  - Beacuse the clock used in TCC805x is based on the main clock and RTC clock, minimizing the crystal deviation can reduce an error of each system clock and provide a more stable system.
+
+  &nbsp;
+
+  &nbsp;
+
+## Tuning Information of TCC805x EVB
+
+The crystal tuning is performed on TCC805x EVB to determine external values. This chapter describes the design information for TCC805x EVB.
+
+- Test Board 1: TCC8059_CPU_LPD4321_SV0.1
+
+- Test Board 2: TCC8050_53_CPU_LPD4321_SV0.1
+
+- Crystal Information: Refer to Table 3.2.
+
+&nbsp;
+
+**Table 3.2 Crystal Specification for TCC8059 EVB**
+
+| **Item**            | **Main Clock** | **RTC Clock**  | **Unit**             |
+|---------------------|----------------|----------------|----------------------|
+| Part Number         | E3SB24E008100A | ETST003278100A | \-                   |
+| Frequency           | 24 MHz         | 32.768 kHz     | \-                   |
+| Load Capacitance    | 12             | 12.5           | pF                   |
+| Frequency Tolerance | ±10            | ±20            | ppm (@ 25 °C ± 3 °C) |
+| Maximum ESR         | 60             | 70K            | Ω                    |
+| Drive Level (DL)    | 100            | \-             | µW                   |
+| Mode of Vibration   | Fundamental    | Fundamental    | \-                   |
+
+&nbsp;
+
+**Table 3.3 Crystal Specification for TCC8050_53 EVB**
+
+| **Item** | **Main Clock** | **RTC Clock** | **DP Clock** | **UFS Clock** | **Unit** |
+|----|----|----|----|----|----|
+| Part Number | E3SB24E008100A | ETST003278100A | E3SB24E008100A | E3SB26E000011E | \- |
+| Frequency | 24 MHz | 32.768 kHz | 24 MHz | 26 MHz | \- |
+| Load Capacitance | 12 | 12.5 | 12 | 12 | pF |
+| Frequency Tolerance | ±10 | ±20 | ±10 | ±10 | ppm (@ 25 °C ± 3 °C) |
+| Maximum ESR | 60 | 70K | 60 | 50 | Ω |
+| Drive Level (DL) | 100 | \- | 100 | 200 | µW |
+| Mode of Vibration | Fundamental | Fundamental | Fundamental | Fundamental | \- |
+
+&nbsp;
+
+### Test Report of Crystal Vendor
+
+Table 3.4 and Table 3.5 describe test reports provided by the crystal vendor for TCC805x EVB.
+
+&nbsp;
+
+**Table 3.4 Test Report of TCC8059 EVB**
+
+| **Item**                     | **Unit** | **Main Clock** | **RTC Clock** |
+| ---------------------------- | -------- | -------------- | ------------- |
+| C<sub>L1</sub>               | pF       | 16 (C22)       | 20 (C21)      |
+| C<sub>L2</sub>               | pF       | 16 (C23)       | 20 (C24)      |
+| R<sub>F</sub>                | Ω        | 499K (R57)     | 4.7M (R58)    |
+| R<sub>S</sub>                | Ω        | 0 (R59)        | 0 (R60)       |
+| Negative Resistance          | Ω        | 350            | 220K          |
+| DL                           | µW       | 19.92          | \-            |
+| Output Frequency             | ppm      | -3.67          | 19            |
+|                              | MHz      | 23.999912      | 0.032768623   |
+| Frequency Shift of PCB Board | ppm      | -5.97          | 6.71          |
+
+&nbsp;
+
+**Table 3.5 Test Report of TCC8050_53 EVB**
+
+| **Item** | **Unit** | **Main Clock** | **RTC Clock** | **DP Clock** | **UFS Clock** |
+|----|----|----|----|----|----|
+| C<sub>L1</sub> | pF | 12 (C45) | 20 (C33) | 16 (C20) | 12 (C22) |
+| C<sub>L2</sub> | pF | 15 (C48) | 20 (C34) | 16 (C21) | 12 (C23) |
+| R<sub>F</sub> | Ω | 499K (R58) | 4.7M (R36) | 499K (R30) | 499K (R31) |
+| R<sub>S</sub> | Ω | 0 (R59) | 0 (R37) | 0 (R320) | 0 (R33) |
+| Negative Resistance | Ω | 380 | 230K | 400 | 1100 |
+| DL | µW | 21.95 | \- | 24.52 | 52.10 |
+| Output Frequency | ppm | 0.12 | 6.00 | -6.54 | -3.19 |
+|  | MHz | 24.000003 | 0.032768197 | 23.999843 | 25.999917 |
+| Frequency Shift of PCB Board | ppm | -0.14 | 5.78 | -4.89 | -1.10 |
+
+&nbsp;
+
+**Note:** When designing the crystal circuit, you must request the tuning value of the crystal circuit from the crystal vendor as described in Table 3.4 and Table 3.5.
+
+&nbsp;
+
+&nbsp;
+
+# References
+
+1.  Contact Telechips for more details: [sales@telechips.com](mailto:auto_sales@telechips.com)
+
+2.  TCC805x Full Specification
+
+3.  Reference Schematic of TCC805x
+
+&nbsp;
+
+**Note:** Reference documents can be provided whenever available, depending on the terms of a contract. If the reference documents are unavailable, the contents directly related to your development can be guided.
+
+&nbsp;
+
+&nbsp;
+
+# Revision History
+
+## Rev. 1.00: 2024-08-09
+
+- Changed
+  - Title changed from “TCC805x ~~Common~~ Hardware-Application Note for Crystal Design”
+
+
+&nbsp;
+
+## Rev. 0.02: 2022-02-17
+
+- Updated
+
+  - Chapter 1.2.2, Chapter 1.2.5: Description
+
+
+  - Chapter 2.1: Figure 2.2
+
+
+  - Chapter 2.4: Figure 2.10
+
+
+&nbsp;
+
+## Rev. 0.01: 2020-08-26
+
+- Preliminary version release
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+------
+
+DISCLAIMER
+
+This material is being made available solely for your internal use with its products and service offerings of Telechips, Inc (“Telechips”). and/or licensors and shall not be used for any other purposes. This material may not be altered, edited, or modified in any way without Telechips’ prior written approval. Unauthorized use or disclosure of this material or the information contained herein is strictly prohibited, and you agree to indemnify Telechips and licensors for any damages or losses suffered by Telechips and/or licensors for any unauthorized uses or disclosures of this material, in whole or part. Further, Telechips, Inc. reserves the right to revise this material and to make changes to its content, at any time, without obligation to notify any person or entity of such revisions or changes.
+
+THIS MATERIAL IS BEING PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESSED, IMPLIED, STATUTORY OR OTHERWISE. TO THE MAXIMUM EXTENT PERMITTED BY LAW, TELECHIPS AND/OR LICENSORS SPECIFICALLY DISCLAIM ALL WARRANTIES OF TITLE, MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, COMPLETENESS OR ACCURACY, AND ALL WARRANTIES ARISING OUT OF TRADE USAGE OR OUT OF A COURSE OF DEALING OR COURSE OF PERFORMANCE. MOREOVER, NEITHER TELECHIPS, INC. NOR LICENSORS, SHALL BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY EXPENSES, LOSSES, USE, OR ACTIONS HOWSOEVER INCURRED OR UNDERTAKEN BY YOU IN RELIANCE ON THIS MATERIAL.
+
+THIS MATERIAL IS DESIGNED FOR GENERAL PURPOSE, AND ACCORDINGLY YOU ARE RESPONSIBLE FOR ALL OR ANY OF INTELLECTUAL PROPERTY LICENSES REQUIRED FOR ACTUAL APPLICATION. TELECHIPS, INC. DOES NOT PROVIDE ANY INDEMNIFICATION FOR ANY INTELLECTUAL PROPERTIES OWNED BY THIRD PARTY.
+
+Copyright Statement
+
+Copyright in this material provided by Telechips, Inc. is owned by Telechips unless otherwise noted. For reproduction or use of Telechips’ copyright material, prior written consent should be obtained from Telechips. That prior written consent, if given, will be subject to conditions that Telechips’ name should be included and interest in the material should be acknowledged when the material is reproduced or quoted, either in whole or in part. You must not copy, adapt, publish, distribute, or commercialize any contents contained in the material in any manner without the written permission of Telechips. Trademarks used in Telechips’ copyright material are the property of Telechips.
+
+***For customers who use Google technology:***
+
+ "Copyright © 2013 Google Inc. All rights reserved.”

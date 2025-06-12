@@ -18,21 +18,45 @@ input_file = sys.argv[1]
 output_file = input_file.replace(".md", ".mdx")
 
 # Markdown의 ![]() 이미지 링크를 GitHub Pages URL로 바꿔줌
-def convert_all_image_links(content):
-    pattern = r'!\[[^\]]*?\]\(([^)]+?\.(?:png|jpg|jpeg|svg))\)'
-    def replacer(match):
-        raw_path = match.group(1).replace("\\", "/")
-        if "documentimage" not in raw_path.lower():
-            return match.group(0)
-        try:
-            idx = raw_path.lower().index("documentimage")
-            relative_path = raw_path[idx + len("documentimage") + 1:]
-            decoded = unquote(relative_path)
-            encoded = quote(decoded)
-            return f"![]({GITHUB_IMAGE_BASE}{encoded})"
-        except:
-            return match.group(0)
-    return re.sub(pattern, replacer, content, flags=re.IGNORECASE)
+def convert_email_and_url(content):
+    """
+    이메일/URL 자동 링크화, 단 이미지 경로/Windows 경로 내부 문자열은 예외 처리
+    """
+
+    # 정규 마크다운 링크 안의 텍스트는 무시
+    content = re.sub(r'<(\[[^\]]+\]\([^)]+\))>', r'\1', content)
+
+    # ✅ 파일 경로 안에 포함된 문자열은 무시하도록 필터링
+    skip_line_keywords = ["documentimage", "\\", "/", ".png", ".jpg", ".jpeg", ".svg"]
+
+    def safe_email_replace(text):
+        lines = text.splitlines()
+        result = []
+        for line in lines:
+            if any(k in line for k in skip_line_keywords):
+                result.append(line)
+            else:
+                # 이메일
+                line = re.sub(
+                    r'(?<!\[)(?<!mailto:)(?<!\]\()(?<!\]\(mailto:)(?<!mailto:)\b[\w\.-]+@[\w\.-]+\.\w{2,}\b(?!\))',
+                    lambda m: f"[{m.group(0)}](mailto:{m.group(0)})",
+                    line
+                )
+                # <https://...> → 마크다운 링크
+                line = re.sub(r'<(https?://[^\s>]+)>', r'[\1](\1)', line)
+
+                # 일반 도메인
+                domain_pattern = r'(?<![\w/])((?:https?://)?(?:www\.)?[\w.-]+\.\w{2,})(?![\w/])'
+                def linkify_domain(match):
+                    url = match.group(1)
+                    return f"[{url}]({url})" if url.startswith("http") else f"[{url}](https://{url})"
+                line = re.sub(domain_pattern, linkify_domain, line)
+                result.append(line)
+        return "\n".join(result)
+
+    return safe_email_replace(content)
+
+
 
 # <Zoom>...</Zoom> 감싸진 구버전 이미지 → <ZoomableImage />로 변환
 def replace_zoom_wrapped_images(content):
