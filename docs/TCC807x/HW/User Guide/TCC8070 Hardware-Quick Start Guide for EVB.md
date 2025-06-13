@@ -1,0 +1,285 @@
+---
+sidebar_label: TCC8070 Hardware-Quick Start Guide for EVB
+---
+
+
+
+# Introduction
+
+This document describes the overall components and usage of the TCC8070 EVB.
+
+&nbsp;
+
+## Scope
+
+- Description of Evaluation Board (EVB) components
+
+- Instructions for connecting the EVB to a computer and for supplying power
+
+&nbsp;
+
+&nbsp;
+
+## Components of EVB
+
+Table 1.1 shows the configuration of a single display system for the TCC8070 EVB.
+
+Check that all components are included and undamaged. If any of these components are missing or damaged, contact Telechips. \[1\]
+
+<p style={{ textAlign: "center", fontWeight: "bold", marginBottom: "0.2rem" }}>Table 1.1 Configuration of Single Display System for TCC8070 EVB</p>
+
+| **Figure**                                                   | **Board Name/Specification**                 | **Quantity** |
+| ------------------------------------------------------------ | -------------------------------------------- | ------------ |
+| ![image-20250613084704358](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC807x\User Guide\TCC8070 Hardware-Quick Start Guide for EVB\image-20250613084704358.png) | TCC8070 EVB                                  | 1            |
+| ![image-20250613084708701](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC807x\User Guide\TCC8070 Hardware-Quick Start Guide for EVB\image-20250613084708701.png) | DC 12V Power Adapter  (10A or more required) | 1            |
+| ![image-20250613084713600](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC807x\User Guide\TCC8070 Hardware-Quick Start Guide for EVB\image-20250613084713600.png) | USB Micro Type Cable                         | 1            |
+| ![image-20250613084717143](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC807x\User Guide\TCC8070 Hardware-Quick Start Guide for EVB\image-20250613084717143.png) | 110/220V Power Cable                         | 1            |
+
+
+
+**Note:** Refer to “*TCC8070 Hardware-User Guide for EVB*” for detailed information.
+
+**Caution:** Compatibility problems may occur if you use cables other than the basic components for display and Power Adapter provided by Telechips.
+
+&nbsp;
+
+### Additional Requirement
+
+In addition to the components listed in Table 1.1 above, the following components can be required in some cases.
+
+<p style={{ textAlign: "center", fontWeight: "bold", marginBottom: "0.2rem" }}>Table 1.2 Additional Component</p>
+
+| **Figure** | **Board Name/Specification** | **Quantity** |
+|:--:|:--:|:--:|
+| ![](media/image6.png) | USB Type-C cable (ST-A type to ST-C type) | 1 |
+
+&nbsp;
+
+&nbsp;
+
+# EVB Preparation
+
+## Supplying 12V Power to EVB
+
+12V power adapter is included in the EVB kit.
+
+Supply 12V power to the EVB by following the steps below:
+
+1.  Connect the provided DC 12V power adapter with the 110/220V power cable.
+
+2.  Check the 12V output.
+
+3.  Connect the DC 12V power adapter to the DC-JACK (J11) on the TCC807x main board.
+
+![image-20250613084807782](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC807x\User Guide\TCC8070 Hardware-Quick Start Guide for EVB\image-20250613084807782.png)
+
+<p style={{ textAlign: "center", fontWeight: "bold", marginBottom: "0.2rem" }}>Figure 2.1 DC-Jack on TCC807x Main Board</p>
+
+&nbsp;
+
+&nbsp;
+
+## Connecting UART of EVB to Computer
+
+The EVB’s UART interface will be provided on the main board or sub-board depending on the manufacturer’s parts supply and demand situation.
+
+The supported debug of the UART interface is as follows:
+
+- Main Cluster (Cortex-A76)
+
+- Sub-cluster (Cortex-A55)
+
+- Storage Core
+
+- Internal ISP
+
+&nbsp;
+
+### Debug of UART I/F on TCC807x Main Board
+
+The EVB communicates with your computer by using a serial interface. The TCC807x main board uses USB Type-C connector for debugging.
+
+**Caution:** Do not confuse the USB Type-C connector with the general USB Type-C connector used in mobile phones.
+
+Connect the EVB to your computer by following the steps below:
+
+1. Prepare one USB Type-C cable (ST-A type to ST-C type).
+2. Connect one side of the USB Type-C cable (ST-A type to ST-C type) to the TCC807x main board’s USB Type-C connector (JC1).
+3. Connect the other side of the USB Type-C cable (ST-A type to ST-C type) to your computer.
+
+&nbsp;
+
+![image-20250613084912967](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC807x\User Guide\TCC8070 Hardware-Quick Start Guide for EVB\image-20250613084912967.png)
+
+<p style={{ textAlign: "center", fontWeight: "bold", marginBottom: "0.2rem" }}>Figure 2.2 USB Type-C Connector for Debug of UART I/F on TCC807x Main Board</p>
+
+&nbsp;
+
+&nbsp;
+
+### Debug of UART I/F with TCC80XX_UART_CP2102 (UART Sub-board)
+
+The EVB communicates with your computer by using a serial interface.
+
+TCC80XX_UART_CP2102 (UART sub-board) uses a USB Type-C connector for debugging.
+
+&nbsp;
+
+> [!CAUTION]
+>
+> Do not confuse the USB Type-C connector with the general USB Type-C connector used in mobile phones.
+
+&nbsp;
+
+Connect the EVB to your computer by following the steps below:
+
+1. Prepare three USB Type-C cables (ST-A type to ST-C type).
+
+2. Connect one side of the USB Type-C cable (ST-A type to ST-C type) to the UART sub-board’s USB Type-C connector (JC3) to output the debug message of the Main cluster (Cortex-CA76) of the TCC8070.
+
+   Connect the other side of the USB Type-C cable (ST-A type to ST-C type) to your computer.
+
+3. Connect one side of the USB Type-C cable (ST-A type to ST-C type) to the UART sub-board’s USB Type-C connector (JC1) to output the debug message of the Sub-cluster (Cortex-CA55) of the TCC8070.
+
+   Connect the other side of the USB Type-C cable (ST-A type to ST-C type) to your computer.
+
+4. Connect one side of the USB Type-C cable (ST-A type to ST-C type) to the UART sub-board’s USB Type-C connector (JC2) to output the debug message of the Storage core of the TCC8070.
+
+   Connect the other side of the USB Type-C cable (ST-A type to ST-C type) to your computer.
+
+5. Connect one side of the USB Type-C cable (ST-A type to ST-C type) to the UART sub-board’s USB Type-C connector (JC4) to output the debug message of the ISP of the TCC8070.
+
+   Connect the other side of the USB Type-C cable (ST-A type to ST-C type) to your computer.
+
+   &nbsp;
+
+![image-20250613085140697](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC807x\User Guide\TCC8070 Hardware-Quick Start Guide for EVB\image-20250613085140697.png)
+
+<p style={{ textAlign: "center", fontWeight: "bold", marginBottom: "0.2rem" }}>Figure 2.3 USB Type-C Connectors for Debug of UART I/F with UART Sub-board</p>
+
+&nbsp;
+
+&nbsp;
+
+## Connecting EVB to JTAG Debugger
+
+Connect the EVB to the JTAG debugger by following the steps below:
+
+1.  Prepare the JTAG debugger.
+1.  Connect the JTAG debugger for system debug to the JTAG header (J10D1) on the TCC8070 CPU board.
+
+![image-20250613085210310](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC807x\User Guide\TCC8070 Hardware-Quick Start Guide for EVB\image-20250613085210310.png)
+
+<p style={{ textAlign: "center", fontWeight: "bold", marginBottom: "0.2rem" }}>Figure 2.4 JTAG Header on TCC8070 CPU Board</p>
+
+&nbsp;
+
+## Connecting EVB to FWDN on Computer
+
+The EVB uses Firmware Downloader (***FWDN***) to update the SDK. The EVB communicates with your computer by using High Speed USB. The TCC8070 CPU board includes a USB Micro Type-AB connector (JC5).
+
+&nbsp;
+
+**Note:** To prevent the collision of USB connection between EVB and PC when USB 2.0 DRD port is in host mode, the USB cable for ***FWDN*** is changed to USB Micro Type cable.
+
+&nbsp;
+
+Connect EVB to ***FWDN*** on your computer by following the steps below:
+
+1.  Prepare one USB Micro type cable.
+1.  Check the USB boot mode switch on the TCC8070 CPU board.
+1.  Connect the DC 12V power adapter.
+1.  Connect the USB Micro type cable to USB Micro Type-A/B connector (JC5) for ***FWDN*** on the CPU board.
+1.  Connect the USB Micro type cable from step 4 to your computer.
+
+For more information, refer to *“TCC8070 Common Hardware-User Guide for EVB”*.
+
+&nbsp;
+
+![image-20250613085251109](C:\Users\ye.kang\Desktop\YE\15. web-base documentation\Github\documentimage\images\TCC807x\User Guide\TCC8070 Hardware-Quick Start Guide for EVB\image-20250613085251109.png)
+
+<p style={{ textAlign: "center", fontWeight: "bold", marginBottom: "0.2rem" }}>Figure 2.5 USB Micro Type-A/B Connector for FWDN on TCC8070 CPU Board</p>
+
+&nbsp;
+
+&nbsp;
+
+# References
+
+1.  Contact Telechips for more details: <sales@telechips.com>
+2.  TCC8070 Hardware-User Guide for EVB
+
+&nbsp;
+
+**Note**: Reference documents can be provided whenever available, depending on the terms of a contract. If the reference documents are unavailable, the contents directly related to your development can be guided.
+
+&nbsp;
+
+&nbsp;
+
+# Revision History
+
+## Rev. 1.10: 2024-09-12
+
+- Updated
+
+  - Chapter 2.3: Figure 2.4
+
+
+  - Chapter 2.4: Figure 2.5
+
+
+&nbsp;
+
+- Changed
+  - Title from “*TCC807x Common Hardware-Quick Start Guide for EVB*” to “*TCC8070 Hardware-Quick Start Guide for EVB*”
+
+
+&nbsp;
+
+## Rev. 1.00: 2024-01-30
+
+- Updated
+
+  - Chapter 2.1: Figure 2.1
+
+
+  - Chapter 2.2.1 : Figure 2.2
+
+
+  - Chapter 2.2.2 : Figure 2.3
+
+
+  - Chapter 2.3 : Figure 2.4
+
+
+  - Chapter 2.4 : Figure 2.5
+
+
+&nbsp;
+
+## Rev. 0.01: 2022-09-28
+
+- Preliminary version
+
+&nbsp;
+
+&nbsp;
+
+------
+
+DISCLAIMER
+
+This material is being made available solely for your internal use with its products and service offerings of Telechips, Inc (“Telechips”). and/or licensors and shall not be used for any other purposes. This material may not be altered, edited, or modified in any way without Telechips’ prior written approval. Unauthorized use or disclosure of this material or the information contained herein is strictly prohibited, and you agree to indemnify Telechips and licensors for any damages or losses suffered by Telechips and/or licensors for any unauthorized uses or disclosures of this material, in whole or part. Further, Telechips, Inc. reserves the right to revise this material and to make changes to its content, at any time, without obligation to notify any person or entity of such revisions or changes.
+
+THIS MATERIAL IS BEING PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESSED, IMPLIED, STATUTORY OR OTHERWISE. TO THE MAXIMUM EXTENT PERMITTED BY LAW, TELECHIPS AND/OR LICENSORS SPECIFICALLY DISCLAIM ALL WARRANTIES OF TITLE, MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, COMPLETENESS OR ACCURACY, AND ALL WARRANTIES ARISING OUT OF TRADE USAGE OR OUT OF A COURSE OF DEALING OR COURSE OF PERFORMANCE. MOREOVER, NEITHER TELECHIPS, INC. NOR LICENSORS, SHALL BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY EXPENSES, LOSSES, USE, OR ACTIONS HOWSOEVER INCURRED OR UNDERTAKEN BY YOU IN RELIANCE ON THIS MATERIAL.
+
+THIS MATERIAL IS DESIGNED FOR GENERAL PURPOSE, AND ACCORDINGLY YOU ARE RESPONSIBLE FOR ALL OR ANY OF INTELLECTUAL PROPERTY LICENSES REQUIRED FOR ACTUAL APPLICATION. TELECHIPS, INC. DOES NOT PROVIDE ANY INDEMNIFICATION FOR ANY INTELLECTUAL PROPERTIES OWNED BY THIRD PARTY.
+
+Copyright Statement
+
+Copyright in this material provided by Telechips, Inc. is owned by Telechips unless otherwise noted. For reproduction or use of Telechips’ copyright material, prior written consent should be obtained from Telechips. That prior written consent, if given, will be subject to conditions that Telechips’ name should be included and interest in the material should be acknowledged when the material is reproduced or quoted, either in whole or in part. You must not copy, adapt, publish, distribute, or commercialize any contents contained in the material in any manner without the written permission of Telechips. Trademarks used in Telechips’ copyright material are the property of Telechips.
+
+***For customers who use Google technology:***
+
+ "Copyright © 2013 Google Inc. All rights reserved.”
