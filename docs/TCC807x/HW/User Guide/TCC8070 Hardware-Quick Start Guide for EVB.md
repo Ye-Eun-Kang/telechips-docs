@@ -53,7 +53,7 @@ In addition to the components listed in Table 1.1 above, the following component
 
 | **Figure** | **Board Name/Specification** | **Quantity** |
 |:--:|:--:|:--:|
-| <ZoomableImage src="https://ye-eun-kang.github.io/documentimage/images/TCC807x/User%20Guide/TCC8070%20Hardware-Quick%20Start%20Guide%20for%20EVB/image-20250613093815158.png" width="90%" /> | USB Type-C cable (ST-A type to ST-C type) | 1 |
+| ![image-20250613093815158](../../../../../documentimage/images/TCC807x/User Guide/TCC8070 Hardware-Quick Start Guide for EVB/image-20250613093815158.png) | USB Type-C cable (ST-A type to ST-C type) | 1 |
 
 &nbsp;
 
