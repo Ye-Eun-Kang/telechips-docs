@@ -8,7 +8,7 @@ import Admonition from '@theme/Admonition';
     Source code and binaries for sub-core are included.
       This version is configured to download AOSP sources directly from the official Google server.
       Telechips-specific AOSP fixes are separated into a dedicated patch folder.
-      See Chapter 4.1.2.1</strong> in the Getting Started Guide (Android 14 SDK for TCC807x and TCC805x)
+      See Chapter 4.1.2.1 in the Getting Started Guide (Android 14 SDK for TCC807x and TCC805x)
    
    </Admonition>
 
