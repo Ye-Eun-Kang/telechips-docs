@@ -1,18 +1,17 @@
-# 🚀 Telechips Android 14 IVI SDK v1.1.0 Release
-
 import Layout from '@theme/Layout'
 import Admonition from '@theme/Admonition';
 
+# 🚀Telechips Android 14 IVI SDK v1.1.0 Release
 
 <Admonition type="important">
- This SDK has known limitations. Please refer to the relevant **Release Notes** for detailed information.
-- Source code and binaries for sub-core are included.  
-- This version is configured to download AOSP sources directly from the official Google server.  
-- Telechips-specific AOSP fixes are separated into a dedicated patch folder.  
-    - See **Chapter 4.1.2.1** in the *Getting Started Guide* (Android 14 SDK for TCC807x and TCC805x)
-</Admonition>
+ This SDK has known limitations. Please refer to the relevant Release Notes for detailed information.
+    Source code and binaries for sub-core are included.
+      This version is configured to download AOSP sources directly from the official Google server.
+      Telechips-specific AOSP fixes are separated into a dedicated patch folder.
+      See Chapter 4.1.2.1</strong> in the Getting Started Guide (Android 14 SDK for TCC807x and TCC805x)
+   
+   </Admonition>
 
-  
 ---
 
 
